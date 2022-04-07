@@ -7,7 +7,8 @@ public class CameraMov : MonoBehaviour
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
 
-    [SerializeField] private Transform playerOrientation;
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform hands;
 
     private float xRotation;
     private float yRotation;
@@ -27,10 +28,13 @@ public class CameraMov : MonoBehaviour
         xRotation -= mouseY;
 
         //Limitamos el rango de vision
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -90f, 45f);
 
         //rotacion de camara y player
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        playerOrientation.rotation = Quaternion.Euler(0f, yRotation, 0f);
+        player.rotation = Quaternion.Euler(0f, yRotation, 0f);
+
+        //Todo: Hacer que el objeto de la mano siga el punto de la cam.
+        //hands.position += new Vector3(0f,xRotation);
     }
 }

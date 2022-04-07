@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMov1 : MonoBehaviour
 {
-    [SerializeField] private Transform orintation;
     [SerializeField] private float speed;
 
     private Rigidbody body;
@@ -39,7 +38,7 @@ public class PlayerMov1 : MonoBehaviour
     private void Movement()
     {
         //La orientacion del jugador * S o W, y el perpendicular a la orientacion * A o D
-        moveDirection = orintation.forward * vInput + orintation.right * hInput;
+        moveDirection = transform.forward * vInput + transform.right * hInput;
 
         body.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
     }
