@@ -28,7 +28,7 @@ public class CameraMov : MonoBehaviour
         xRotation -= mouseY;
 
         //Limitamos el rango de vision
-        xRotation = Mathf.Clamp(xRotation, -90f, 45f);
+        xRotation = Mathf.Clamp(xRotation, -90f, 75f);
 
         //rotacion de camara y player
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
