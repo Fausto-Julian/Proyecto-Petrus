@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class PlateScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Rigidbody bodyContact;
+    private Transform posContact;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.tag == "Object")
         {
+            bodyContact = collision.rigidbody;
+            posContact = collision.transform;
+
+            bodyContact.isKinematic = false;
+            
             collision.transform.SetParent(transform);
 
         }
     }
+
+    
 }
