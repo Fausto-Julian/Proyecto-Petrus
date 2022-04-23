@@ -12,9 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private LayerMask whatIsGround;
 
-    private float currentSpeed;
-    private bool canJump;
-    private Vector3 moveInput;
+    private float _currentSpeed;
+    private bool _canJump;
+    private Vector3 _moveInput;
 
     [Header("Gravity")]
     [SerializeField] private float gravityModifier;
@@ -25,65 +25,65 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool invertY;
     [SerializeField] private Transform cameraPoint;
 
-    private CharacterController characterController;
-    private Animator anim;
+    private CharacterController _characterController;
+    private Animator _anim;
 
     private void Awake()
     {
-        characterController = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+        _characterController = GetComponent<CharacterController>();
+        _anim = GetComponent<Animator>();
 
-        currentSpeed = walkSpeed;
+        _currentSpeed = walkSpeed;
     }
 
     private void Update()
     {
         // Alternate Speed Walk And Run
-
+        
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            currentSpeed = runSpeed;
+            _currentSpeed = runSpeed;
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            currentSpeed = walkSpeed;
+            _currentSpeed = walkSpeed;
         }
 
         // Movement
-        var yStorage = moveInput.y;
+        var yStorage = _moveInput.y;
 
-        Vector3 horizontalMove = transform.right * Input.GetAxis("Horizontal");
-        Vector3 verticalMove = transform.forward * Input.GetAxis("Vertical");
+        var horizontalMove = transform.right * Input.GetAxis("Horizontal");
+        var verticalMove = transform.forward * Input.GetAxis("Vertical");
 
-        moveInput = horizontalMove + verticalMove;
-        moveInput.Normalize();
-        moveInput = moveInput * currentSpeed;
+        _moveInput = horizontalMove + verticalMove;
+        _moveInput.Normalize();
+        _moveInput = _moveInput * _currentSpeed;
 
-        anim.SetFloat("moveSpeed", moveInput.magnitude);
+        _anim.SetFloat("moveSpeed", _moveInput.magnitude);
 
-        moveInput.y = yStorage;
+        _moveInput.y = yStorage;
 
-        // Gravedad
-        moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
+        // Gravity
+        _moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
 
-        if (characterController.isGrounded)
+        if (_characterController.isGrounded)
         {
-            moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
+            _moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
         }
 
         // Jump
-        canJump = Physics.OverlapSphere(groundCheckPoint.position, 2f, whatIsGround).Length > 0;
+        _canJump = Physics.OverlapSphere(groundCheckPoint.position, 2f, whatIsGround).Length > 0;
 
-        if (Input.GetButtonDown("Jump") && canJump)
+        if (Input.GetButtonDown("Jump") && _canJump)
         {
-            moveInput.y = jumpForce;
+            _moveInput.y = jumpForce;
         }
 
-        characterController.Move(moveInput * Time.deltaTime);
+        _characterController.Move(_moveInput * Time.deltaTime);
 
         // Camera Controller
-        Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
+        var mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
 
         if (invertX)
         {
@@ -95,7 +95,10 @@ public class PlayerController : MonoBehaviour
             mouseInput.y = -mouseInput.y;
         }
 
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
+        var rotation = transform.rotation;
+        rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y + mouseInput.x, rotation.eulerAngles.z);
+        
+        transform.rotation = rotation;
         cameraPoint.rotation = Quaternion.Euler(cameraPoint.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f));
     }
 }

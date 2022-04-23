@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,40 +30,43 @@ public class Food : ScriptableObject
     [SerializeField] private Mesh meshFoodBurned;
     [SerializeField] private MeshRenderer meshRendererFoodBurned;
 
-    public string ID { get { return id; } }
+    public string ID => id;
+    
     public FoodType FoodType
     {
-        get
-        {
-            return foodType;
-        }
-        set
-        {
-            foodType = value;
-        }
+        get => foodType;
+        set => foodType = value;
     }
 
     public StatusFood StatusFood
     {
-        get
-        {
-            return statusFood;
-        }
+        get => statusFood;
         set
         {
-            if (statusFood == StatusFood.Raw)
+            switch (statusFood)
             {
-                if (value == StatusFood.Cooked || value == StatusFood.Burned)
+                case StatusFood.Raw:
                 {
-                    statusFood = value;
+                    if (value == StatusFood.Cooked || value == StatusFood.Burned)
+                    {
+                        statusFood = value;
+                    }
+
+                    break;
                 }
-            }
-            else if (statusFood == StatusFood.Cooked)
-            {
-                if (value == StatusFood.Burned)
+                case StatusFood.Cooked:
                 {
-                    statusFood = value;
+                    if (value == StatusFood.Burned)
+                    {
+                        statusFood = value;
+                    }
+
+                    break;
                 }
+                case StatusFood.Burned:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }
@@ -71,15 +75,12 @@ public class Food : ScriptableObject
     {
         get
         {
-            if (statusFood == StatusFood.Raw)
+            return statusFood switch
             {
-                return meshFoodRaw;
-            }
-            else if (statusFood == StatusFood.Cooked)
-            {
-                return meshFoodCooked;
-            }
-            return meshFoodRaw;
+                StatusFood.Raw => meshFoodRaw,
+                StatusFood.Cooked => meshFoodCooked,
+                _ => meshFoodRaw
+            };
         }
     }
 
@@ -87,15 +88,12 @@ public class Food : ScriptableObject
     {
         get
         {
-            if (statusFood == StatusFood.Raw)
+            return statusFood switch
             {
-                return meshRendererFoodRaw;
-            }
-            else if (statusFood == StatusFood.Cooked)
-            {
-                return meshRendererFoodCooked;
-            }
-            return meshRendererFoodRaw;
+                StatusFood.Raw => meshRendererFoodRaw,
+                StatusFood.Cooked => meshRendererFoodCooked,
+                _ => meshRendererFoodRaw
+            };
         }
     }
 }
