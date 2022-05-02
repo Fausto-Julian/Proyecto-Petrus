@@ -1,44 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CuttingBoardScript : MonoBehaviour
 {
-    private GameObject contactGameobject;
-    private Transform contactPosition;
+    private GameObject _contactGameObject;
+    private Transform _contactPosition;
     [SerializeField] private GameObject halfApple;
-    private float timer;
-    void Start()
-    {
-        
-    }
+    private float _timer;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(contactGameobject != null)
+        if(_contactGameObject != null)
         {
-            if (contactGameobject.CompareTag("Object"))
+            if (_contactGameObject.CompareTag("Object"))
             {
                 if (Input.GetKey(KeyCode.Mouse1))
                 {
-                    timer += Time.deltaTime;
-                    if(timer > 1f)
+                    _timer += Time.deltaTime;
+                    if(_timer > 1f)
                     {
-                        contactGameobject.SetActive(false);
-                        Instantiate(halfApple, contactPosition.position, contactGameobject.transform.rotation);
-                        timer = 0f;
+                        _contactGameObject.SetActive(false);
+                        Instantiate(halfApple, _contactPosition.position, _contactGameObject.transform.rotation);
+                        _timer = 0f;
                     }
                 }
-                else timer = 0f;
+                else _timer = 0f;
             }
         }
-        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        contactGameobject = collision.gameObject;
-        contactPosition = collision.transform;
+        _contactGameObject = collision.gameObject;
+        _contactPosition = collision.transform;
     }
 }
