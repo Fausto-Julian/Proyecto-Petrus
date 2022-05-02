@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class PlateScript : MonoBehaviour
 {
-    private Rigidbody bodyContact;
-    private Transform posContact;
 
-    
-
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Object")
+        if(collision.gameObject.CompareTag("Object"))
         {
-            bodyContact = collision.rigidbody;
-            posContact = collision.transform;
-
-            bodyContact.isKinematic = false;
-            
             collision.transform.SetParent(transform);
-
         }
     }
-
     
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Object"))
+        {
+            collision.transform.SetParent(null);
+        }
+    }
 }

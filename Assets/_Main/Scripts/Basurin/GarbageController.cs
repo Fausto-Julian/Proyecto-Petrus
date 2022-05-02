@@ -15,16 +15,16 @@ public class GarbageController : MonoBehaviour
 
     private void Update()
     {
-        _navMeshAgent.destination = garbageFloor.objectDrops.Count > 0 ? garbageFloor.objectDrops[0].transform.position : startPosition.position;
+        _navMeshAgent.destination = garbageFloor.ObjectDrops.Count > 0 ? garbageFloor.ObjectDrops[0].transform.position : startPosition.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (garbageFloor.objectDrops.Count > 0)
+        if (garbageFloor.ObjectDrops.Count > 0)
         {
-            if (other.gameObject == garbageFloor.objectDrops[0].gameObject)
+            if (other.gameObject == garbageFloor.ObjectDrops[0].gameObject)
             {
-                garbageFloor.objectDrops.Remove(garbageFloor.objectDrops[0]);
+                garbageFloor.ObjectDrops.Remove(garbageFloor.ObjectDrops[0]);
                 Destroy(other.gameObject);
             }  
         }

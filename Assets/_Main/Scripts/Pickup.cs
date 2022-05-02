@@ -6,25 +6,25 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
 {
     [SerializeField] private string infoText = "Press F for pickup";
 
-    private GameObject objectPickup = null;
+    private GameObject _objectPickup = null;
 
-    private Rigidbody bodyObjectPickup;
+    private Rigidbody _bodyObjectPickup;
 
     public void ToolTipHide()
     {
-        TooltipSystem.Hide();
+        TooltipSystem.Instance.Hide();
     }
 
     public void ToolTipShow(string content, string header = "")
     {
-        TooltipSystem.Show(content, header);
+        TooltipSystem.Instance.Show(content, header);
     }
 
     private void Update()
     {
-        if (objectPickup == null)
+        if (_objectPickup == null)
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 30f))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f))
             {
                 if (hit.transform.gameObject.CompareTag("Object"))
                 {
@@ -32,16 +32,17 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
 
                     if (Input.GetKeyDown(KeyCode.F))
                     {
-                        objectPickup = hit.transform.gameObject;
+                        _objectPickup = hit.transform.gameObject;
 
-                        bodyObjectPickup = objectPickup.GetComponent<Rigidbody>();
+                        _bodyObjectPickup = _objectPickup.GetComponent<Rigidbody>();
 
-                        bodyObjectPickup.useGravity = false;
-                        bodyObjectPickup.isKinematic = true;
+                        _bodyObjectPickup.useGravity = false;
+                        _bodyObjectPickup.isKinematic = true;
 
-                        objectPickup.transform.position = transform.position;
-                        objectPickup.transform.rotation = transform.rotation;
-                        objectPickup.transform.SetParent(transform);
+                        var transform1 = transform;
+                        _objectPickup.transform.position = transform1.position;
+                        _objectPickup.transform.rotation = transform1.rotation;
+                        _objectPickup.transform.SetParent(transform1);
                         ToolTipHide();
                     }
                 }
@@ -50,25 +51,18 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
                     ToolTipHide();
                 }
             }
-            //if (Input.GetKeyDown(KeyCode.F)) 
-            //{ 
-            //    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 30f))
-            //    {
-                    
-            //    }
-            //}
         }
 
-        if (objectPickup != null)
+        if (_objectPickup != null)
         {
             if (Input.GetKeyDown(KeyCode.G))
             {
-                objectPickup.transform.SetParent(null);
-                bodyObjectPickup.useGravity = true;
-                bodyObjectPickup.isKinematic = false;
+                _objectPickup.transform.SetParent(null);
+                _bodyObjectPickup.useGravity = true;
+                _bodyObjectPickup.isKinematic = false;
 
-                objectPickup = null;
-                bodyObjectPickup = null;
+                _objectPickup = null;
+                _bodyObjectPickup = null;
             }
         }
     }

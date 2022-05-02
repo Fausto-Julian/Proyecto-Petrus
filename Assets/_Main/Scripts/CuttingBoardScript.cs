@@ -13,7 +13,7 @@ public class CuttingBoardScript : MonoBehaviour
         {
             if (_contactGameObject.CompareTag("Object"))
             {
-                if (Input.GetKey(KeyCode.Mouse1))
+                if (Input.GetKey(KeyCode.F))
                 {
                     _timer += Time.deltaTime;
                     if(_timer > 1f)
