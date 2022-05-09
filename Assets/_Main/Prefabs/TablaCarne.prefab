@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 2424775462810739812}
   - component: {fileID: 7539835591219835935}
   - component: {fileID: 3058355846533050014}
-  m_Layer: 0
+  - component: {fileID: 661389706}
+  m_Layer: 8
   m_Name: TablaCarne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5261105376100316643
 Transform:
@@ -96,6 +97,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &661389706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770122975263436162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612a032d90bd2c646856e4dc69bd9b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfApple: {fileID: 1000013652843464, guid: 43d9530894ffb9e468b06ef86dc4efa8, type: 3}
 --- !u!1001 &1341667778657809438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,6 +180,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fcb8dbbc88943b6448eeb35e77f06ae6, type: 3}
       propertyPath: m_Name
       value: cookingKnifeChopping
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcb8dbbc88943b6448eeb35e77f06ae6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcb8dbbc88943b6448eeb35e77f06ae6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcb8dbbc88943b6448eeb35e77f06ae6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcb8dbbc88943b6448eeb35e77f06ae6, type: 3}

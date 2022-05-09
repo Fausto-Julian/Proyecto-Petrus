@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +8,10 @@ public class OptionsMenuScript : MonoBehaviour
 
     [SerializeField] private GameObject mainMenuObject;
     [SerializeField] private GameObject optionsObject;
-    // Update is called once per frame
-    void Awake()
+    
+    private void Awake()
     {
         backButton.onClick.AddListener(OnBackButtonHandler);
-
     }
 
     private void OnBackButtonHandler()

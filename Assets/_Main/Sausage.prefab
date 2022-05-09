@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1413053157337308841}
   - component: {fileID: 5950218273700732800}
   - component: {fileID: 7075491593348482284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sausage
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1000013652843464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

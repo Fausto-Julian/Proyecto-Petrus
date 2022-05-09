@@ -1,24 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TooltipSystem : MonoBehaviour
 {
+    [SerializeField] private Tooltip tooltip;
+    
+    public static TooltipSystem Instance { get; private set; }
 
-    [SerializeField] private static Tooltip _tooltip;
-
-    public static void Show(string content, string header = "")
+    private void Awake()
     {
-        _tooltip.SetText(content, header);
-        _tooltip.gameObject.SetActive(true);
+        if (TooltipSystem.Instance == null)
+        {
+            TooltipSystem.Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public static void Hide()
+    public void Show(string content, string header = "")
+    {
+        tooltip.SetText(content, header);
+        tooltip.gameObject.SetActive(true);
+    }
+
+    public void Hide()
     {
         try
         {
-            _tooltip.gameObject.SetActive(false);
+            tooltip.gameObject.SetActive(false);
         }
         catch
         {

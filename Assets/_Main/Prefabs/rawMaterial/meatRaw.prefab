@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4706332590571911310}
   - component: {fileID: 8574742755969791787}
   - component: {fileID: 5844384044711543777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: meatRaw
   m_TagString: Object
   m_Icon: {fileID: 0}

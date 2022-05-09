@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController _characterController;
     private Animator _anim;
+    private LayerMask _InteractLayer;
 
     private void Awake()
     {
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
         _anim = GetComponent<Animator>();
 
         _currentSpeed = walkSpeed;
+        
+        _InteractLayer = LayerMask.GetMask("Interactable");
     }
 
     private void Update()
@@ -100,5 +103,17 @@ public class PlayerController : MonoBehaviour
         
         transform.rotation = rotation;
         cameraPoint.rotation = Quaternion.Euler(cameraPoint.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f));
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f, LayerMask.GetMask("Interactable")))
+            {
+                var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
+        }
     }
 }

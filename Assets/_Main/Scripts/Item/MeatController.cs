@@ -10,13 +10,14 @@ public enum StatusFood
     Burned
 }
 
-public class MeatController : MonoBehaviour
+public class MeatController : MonoBehaviour, ICuttable
 {
     [SerializeField] private StatusFood statusFood;
     [SerializeField] private float timeCooking;
     [SerializeField] private GameObject meatRaw;
     [SerializeField] private GameObject meatCooked;
     [SerializeField] private GameObject meatBurned;
+    [SerializeField] private GameObject cuttingPrefab;
 
     private float _cookingTimer;
 
@@ -95,5 +96,15 @@ public class MeatController : MonoBehaviour
                 meatCooked.SetActive(false);
                 break;
         }
+    }
+
+    public void Cutting()
+    {
+        var position = transform.position;
+        var rotation = transform.rotation;
+        Instantiate(cuttingPrefab, position, rotation);
+        Instantiate(cuttingPrefab, position, rotation);
+        Instantiate(cuttingPrefab, position, rotation);
+        gameObject.SetActive(false);
     }
 }

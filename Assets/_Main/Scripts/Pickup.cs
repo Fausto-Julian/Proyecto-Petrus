@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,70 +6,63 @@ using UnityEngine;
 public class Pickup : MonoBehaviour, ITooltipTrigger
 {
     [SerializeField] private string infoText = "Press F for pickup";
+    private LayerMask pickLayerMask;
+    
+    private GameObject _objectPickup = null;
 
-    private GameObject objectPickup = null;
+    private Rigidbody _bodyObjectPickup;
 
-    private Rigidbody bodyObjectPickup;
+    private void Awake()
+    {
+        pickLayerMask = LayerMask.GetMask("Object");
+    }
 
     public void ToolTipHide()
     {
-        TooltipSystem.Hide();
+        TooltipSystem.Instance.Hide();
     }
 
     public void ToolTipShow(string content, string header = "")
     {
-        TooltipSystem.Show(content, header);
+        TooltipSystem.Instance.Show(content, header);
     }
 
     private void Update()
     {
-        if (objectPickup == null)
+        if (_objectPickup == null)
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 30f))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
+                    pickLayerMask))
             {
-                if (hit.transform.gameObject.CompareTag("Object"))
+                ToolTipShow(infoText, hit.transform.gameObject.name.ToUpper());
+
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    ToolTipShow(infoText, hit.transform.gameObject.name.ToUpper());
+                    _objectPickup = hit.transform.gameObject;
+                    
+                    _bodyObjectPickup = _objectPickup.GetComponent<Rigidbody>();
 
-                    if (Input.GetKeyDown(KeyCode.F))
-                    {
-                        objectPickup = hit.transform.gameObject;
+                    _bodyObjectPickup.useGravity = false;
+                    _bodyObjectPickup.isKinematic = true;
 
-                        bodyObjectPickup = objectPickup.GetComponent<Rigidbody>();
-
-                        bodyObjectPickup.useGravity = false;
-                        bodyObjectPickup.isKinematic = true;
-
-                        objectPickup.transform.position = transform.position;
-                        objectPickup.transform.rotation = transform.rotation;
-                        objectPickup.transform.SetParent(transform);
-                        ToolTipHide();
-                    }
-                }
-                else
-                {
+                    var transform1 = transform;
+                    _objectPickup.transform.position = transform1.position;
+                    _objectPickup.transform.rotation = transform1.rotation;
+                    _objectPickup.transform.SetParent(transform1);
                     ToolTipHide();
                 }
             }
-            //if (Input.GetKeyDown(KeyCode.F)) 
-            //{ 
-            //    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 30f))
-            //    {
-                    
-            //    }
-            //}
         }
-
-        if (objectPickup != null)
+        else
         {
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                objectPickup.transform.SetParent(null);
-                bodyObjectPickup.useGravity = true;
-                bodyObjectPickup.isKinematic = false;
+                _objectPickup.transform.SetParent(null);
+                _bodyObjectPickup.useGravity = true;
+                _bodyObjectPickup.isKinematic = false;
 
-                objectPickup = null;
-                bodyObjectPickup = null;
+                _objectPickup = null;
+                _bodyObjectPickup = null;
             }
         }
     }

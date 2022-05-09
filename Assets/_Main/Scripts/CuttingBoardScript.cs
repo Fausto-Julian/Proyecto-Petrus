@@ -1,36 +1,46 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class CuttingBoardScript : MonoBehaviour
+public class CuttingBoardScript : MonoBehaviour, IInteractable
 {
-    private GameObject _contactGameObject;
-    private Transform _contactPosition;
-    [SerializeField] private GameObject halfApple;
+    private List<ICuttable> objects = new List<ICuttable>();
     private float _timer;
 
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if(_contactGameObject != null)
+        var obj = collision.gameObject.GetComponent<ICuttable>();
+
+        if (obj != null)
         {
-            if (_contactGameObject.CompareTag("Object"))
+            objects.Add(obj);
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        var obj = other.gameObject.GetComponent<ICuttable>();
+
+        if (obj != null)
+        {
+            if (objects.Contains(obj))
             {
-                if (Input.GetKey(KeyCode.Mouse1))
-                {
-                    _timer += Time.deltaTime;
-                    if(_timer > 1f)
-                    {
-                        _contactGameObject.SetActive(false);
-                        Instantiate(halfApple, _contactPosition.position, _contactGameObject.transform.rotation);
-                        _timer = 0f;
-                    }
-                }
-                else _timer = 0f;
+                objects.Remove(obj);
+                _timer = 0;
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Interact()
     {
-        _contactGameObject = collision.gameObject;
-        _contactPosition = collision.transform;
+        if(objects.Count > 0)
+        {
+            _timer += Time.deltaTime;
+            if(_timer > 1f)
+            {
+                objects[0].Cutting();
+                objects.RemoveAt(0);
+                _timer = 0f;
+            }
+        }
     }
 }
