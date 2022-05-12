@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1413053157337308841}
   - component: {fileID: 5950218273700732800}
   - component: {fileID: 7075491593348482284}
+  - component: {fileID: -2460625996065037143}
   m_Layer: 7
   m_Name: Sausage
   m_TagString: Object
@@ -127,3 +128,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headerText: 
   contentText: 
+--- !u!114 &-2460625996065037143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013652843464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554e951266044b16a0de59645d099849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1

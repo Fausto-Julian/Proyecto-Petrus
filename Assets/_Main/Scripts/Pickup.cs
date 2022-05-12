@@ -6,16 +6,11 @@ using UnityEngine;
 public class Pickup : MonoBehaviour, ITooltipTrigger
 {
     [SerializeField] private string infoText = "Press F for pickup";
-    private LayerMask pickLayerMask;
+    [SerializeField] private LayerMask pickLayerMask;
     
     private GameObject _objectPickup = null;
 
     private Rigidbody _bodyObjectPickup;
-
-    private void Awake()
-    {
-        pickLayerMask = LayerMask.GetMask("Object");
-    }
 
     public void ToolTipHide()
     {
@@ -58,6 +53,14 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 _objectPickup.transform.SetParent(null);
+                
+                var food = _objectPickup.GetComponent<ObjectFood>();
+                
+                if (food != null)
+                {
+                    food.ShootRaycast();
+                }
+
                 _bodyObjectPickup.useGravity = true;
                 _bodyObjectPickup.isKinematic = false;
 

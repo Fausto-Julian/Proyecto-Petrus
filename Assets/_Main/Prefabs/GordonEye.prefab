@@ -227,5 +227,5 @@ MonoBehaviour:
   maxTimerHide: 10
   minTimerShow: 5
   maxTimerShow: 10
-  hideTranform: {fileID: 0}
-  showTranform: {fileID: 0}
+  hideTransform: {fileID: 0}
+  showTransform: {fileID: 0}

@@ -73,6 +73,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 768
   gravityModifier: 1
   mouseSensitivity: 2
   invertX: 0
@@ -141,6 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoText: Press F for pickup
+  pickLayerMask:
+    serializedVersion: 2
+    m_Bits: 640
 --- !u!1 &1783596334421577174
 GameObject:
   m_ObjectHideFlags: 0
