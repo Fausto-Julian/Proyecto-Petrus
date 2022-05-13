@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1128365691240970795}
   - component: {fileID: 206346898}
   - component: {fileID: 206346897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plancha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14.656225, y: 0.9494669, z: 6.4888062}
-  m_Center: {x: 0.89936256, y: -16.277378, z: -3.2896507}
+  m_Size: {x: 14.656225, y: 0.5581575, z: 6.4888062}
+  m_Center: {x: 0.89936256, y: -16.47303, z: -3.2896507}
 --- !u!114 &206346897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 126384298433258924}
   - component: {fileID: 4860353150913174380}
   - component: {fileID: 1544892846092477813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plancha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
