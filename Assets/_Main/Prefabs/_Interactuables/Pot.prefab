@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 729284549674043103}
   - component: {fileID: 729284549674043102}
   - component: {fileID: 729284549674043073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729284549674043075}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.97, y: -4.059886, z: -7.04}
   m_LocalScale: {x: 1, y: 0.3, z: 1}
   m_Children:
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4019798884973681306}
   - component: {fileID: 8060449429644624408}
   - component: {fileID: 3012598461658542911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 7319343743141217771}
   - component: {fileID: 3666930424192525095}
   - component: {fileID: 2286129757896670886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 2067751591292878827}
   - component: {fileID: 1237807207870220807}
   - component: {fileID: 6931783522121179753}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2848087295370215434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tallo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8236125917982732011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Material
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,11 +467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e1b42e09a9bcda46bb40ae3d4b40152, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.318
+      value: 0.311
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e1b42e09a9bcda46bb40ae3d4b40152, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.019
+      value: -0.113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9e1b42e09a9bcda46bb40ae3d4b40152, type: 3}
       propertyPath: m_LocalRotation.w
@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: apple
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e1b42e09a9bcda46bb40ae3d4b40152, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1b42e09a9bcda46bb40ae3d4b40152, type: 3}
 --- !u!1 &1443939088390988920 stripped
@@ -538,8 +542,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 3389249564957039122, guid: 2bc54db894fd4eb49b04a6c054c48b3c, type: 3}
---- !u!135 &5773439254800234044
-SphereCollider:
+--- !u!54 &2092099434
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443939088390988920}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!64 &2092099431
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -548,6 +568,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.098147295
-  m_Center: {x: 0, y: 0.09537662, z: -0.0000009536743}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3645058858012553506, guid: 9e1b42e09a9bcda46bb40ae3d4b40152, type: 3}

@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour, IInteractable
     private IEnumerator Instantiate()
     {
         _delay = true;
-        Instantiate(objectPrefab, transform);
+        Instantiate(objectPrefab, transform.position, transform.rotation);
         yield return new WaitForSeconds(1f);
         _delay = false;
     }

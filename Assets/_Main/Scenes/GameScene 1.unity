@@ -6149,24 +6149,6 @@ Transform:
   m_Father: {fileID: 2021404300}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2040275352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8951771931493477774, guid: b24647c191d991348a5fe9d1798331b8, type: 3}
-  m_PrefabInstance: {fileID: 729284551107375054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2040275354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040275352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54002ed91f9941dea9de2acc723ff4b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 0}
 --- !u!1 &2042368228
 GameObject:
   m_ObjectHideFlags: 0
@@ -6729,13 +6711,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pot
       objectReference: {fileID: 0}
-    - target: {fileID: 7438795758940490843, guid: b24647c191d991348a5fe9d1798331b8, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 194f118e6b75f45418aa8da5ca5eaf54, type: 2}
-    m_RemovedComponents:
-    - {fileID: 8140956668816973358, guid: b24647c191d991348a5fe9d1798331b8, type: 3}
-    - {fileID: 8140956668816973359, guid: b24647c191d991348a5fe9d1798331b8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24647c191d991348a5fe9d1798331b8, type: 3}
 --- !u!1001 &2618667445277681867
 PrefabInstance:
