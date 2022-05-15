@@ -9,6 +9,12 @@ public class GriddleController : MonoBehaviour
         {
             meatController.OnCooking();
         }
+
+        var breadController = other.gameObject.GetComponent<BreadController>();
+        if (breadController != null)
+        {
+            breadController.OnCooking();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -17,6 +23,12 @@ public class GriddleController : MonoBehaviour
         if (meatController != null)
         {
             meatController.OffCooking();
+        }
+
+        var breadController = other.gameObject.GetComponent<BreadController>();
+        if (breadController != null)
+        {
+            breadController.OffCooking();
         }
     }
 }
