@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 1
   difficultyTask: 0
   orderMatters: 0
-  ingredients: []
+  ingredients: 0900000001000000
   imageOrder: {fileID: 21300000, guid: 14dffe6358f3c054c80b341659f966e8, type: 3}

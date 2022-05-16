@@ -34,6 +34,7 @@ public class PlateController : MonoBehaviour, IInteractable
     {
         if (food.gameObject.CompareTag("Object"))
         {
+            Debug.Log("Es un object de tipo: " + food);
             food.transform.SetParent(transform);
             _food.Add(food);
         }
@@ -83,8 +84,10 @@ public class PlateController : MonoBehaviour, IInteractable
             var idFood = _food[j].GetComponent<ObjectFood>().Id;
             if (completed)
             {
+                
                 for (var i = 0; i < _orderTask.Ingredients.Count; i++)
                 {
+                    Debug.Log(_orderTask.Ingredients[i]);
                     if (_orderTask.Ingredients[i] == idFood)
                     {
                         Debug.Log($"Es true: Id food: {idFood} = {_orderTask.Ingredients[i]}");

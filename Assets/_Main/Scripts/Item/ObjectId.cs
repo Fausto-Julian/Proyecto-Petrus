@@ -3,7 +3,17 @@
     MeatRaw,
     MeatCooked,
     MeatBurner,
+    GreenSausage,
     BreadRaw,
     BreadToasted,
-    BreadBurner
+    BreadBurner,
+    WholeTomato,
+    SlicedTomato,
+    WholeLetuce,
+    SlicedLetuce,
+    WholeApple,
+    SlicedApple,
+    BigSausage
+     
+
 }
