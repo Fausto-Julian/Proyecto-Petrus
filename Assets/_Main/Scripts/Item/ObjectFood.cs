@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class ObjectFood : MonoBehaviour
 {
-    [SerializeField] public int ID;
+    [SerializeField] private ObjectId id;
 
     private LayerMask _plateLayerMask;
 
+    public ObjectId Id => id;
+    
     private void Start()
     {
         _plateLayerMask = LayerMask.GetMask("Plate");
@@ -25,6 +27,10 @@ public class ObjectFood : MonoBehaviour
         }
     }
 
+    public void ChangeId(ObjectId newId)
+    {
+        id = newId;
+    }
 
     private void OnDrawGizmos()
     {

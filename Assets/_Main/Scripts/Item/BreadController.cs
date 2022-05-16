@@ -14,8 +14,12 @@ public class BreadController : MonoBehaviour
 
     private bool _isCooking;
 
+    private ObjectFood _objectFood;
+
     private void Start()
     {
+        _objectFood = GetComponent<ObjectFood>();
+        
         _cookingTimer = timeCooking;
         switch (statusFood)
         {
@@ -23,19 +27,25 @@ public class BreadController : MonoBehaviour
                 breadRaw.SetActive(true);
                 breadToasted.SetActive(false);
                 breadBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.BreadRaw);
                 break;
             case StatusFood.Cooked:
                 breadRaw.SetActive(false);
                 breadToasted.SetActive(true);
+                breadBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.BreadToasted);
                 break;
             case StatusFood.Burned:
                 breadRaw.SetActive(false);
                 breadToasted.SetActive(false);
                 breadBurned.SetActive(true);
+                _objectFood.ChangeId(ObjectId.BreadBurner);
                 break;
             default:
                 breadRaw.SetActive(true);
                 breadToasted.SetActive(false);
+                breadBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.BreadRaw);
                 break;
         }
     }
@@ -73,18 +83,23 @@ public class BreadController : MonoBehaviour
                 statusFood = StatusFood.Cooked;
                 breadRaw.SetActive(false);
                 breadToasted.SetActive(true);
+                breadBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.BreadToasted);
                 break;
             case StatusFood.Cooked:
                 statusFood = StatusFood.Burned;
                 breadRaw.SetActive(false);
                 breadToasted.SetActive(false);
                 breadBurned.SetActive(true);
+                _objectFood.ChangeId(ObjectId.BreadBurner);
                 break;
             case StatusFood.Burned:
                 break;
             default:
                 breadRaw.SetActive(true);
                 breadToasted.SetActive(false);
+                breadBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.BreadRaw);
                 break;
         }
     }

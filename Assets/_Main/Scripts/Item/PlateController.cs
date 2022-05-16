@@ -68,7 +68,7 @@ public class PlateController : MonoBehaviour, IInteractable
         {
             for (var i = 0; i < _orderTask.Ingredients.Count; i++)
             {
-                if (_food[i].GetComponent<ObjectFood>().ID != _orderTask.Ingredients[i].ID)
+                if (_food[i].GetComponent<ObjectFood>().Id != _orderTask.Ingredients[i])
                 {
                     return false;
                 }
@@ -80,14 +80,14 @@ public class PlateController : MonoBehaviour, IInteractable
         var completed = true;
         for (var j = 0; j < _food.Count; j++)
         {
-            var idFood = _food[j].GetComponent<ObjectFood>().ID;
+            var idFood = _food[j].GetComponent<ObjectFood>().Id;
             if (completed)
             {
                 for (var i = 0; i < _orderTask.Ingredients.Count; i++)
                 {
-                    if (_orderTask.Ingredients[i].ID == idFood)
+                    if (_orderTask.Ingredients[i] == idFood)
                     {
-                        Debug.Log($"Es true: Id food: {idFood} = {_orderTask.Ingredients[i].ID}");
+                        Debug.Log($"Es true: Id food: {idFood} = {_orderTask.Ingredients[i]}");
                         completed = true;
                         break;
                     }

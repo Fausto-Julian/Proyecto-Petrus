@@ -23,8 +23,12 @@ public class MeatController : MonoBehaviour, ICuttable
 
     private bool _isCooking;
 
+    private ObjectFood _objectFood;
+
     private void Start()
     {
+        _objectFood = GetComponent<ObjectFood>();
+        
         _cookingTimer = timeCooking;
         switch (statusFood)
         {
@@ -32,19 +36,25 @@ public class MeatController : MonoBehaviour, ICuttable
                 meatRaw.SetActive(true);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.MeatRaw);
                 break;
             case StatusFood.Cooked:
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(true);
+                meatBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.MeatCooked);
                 break;
             case StatusFood.Burned:
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(true);
+                _objectFood.ChangeId(ObjectId.MeatBurner);
                 break;
             default:
                 meatRaw.SetActive(true);
                 meatCooked.SetActive(false);
+                meatBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.MeatRaw);
                 break;
         }
     }
@@ -82,12 +92,15 @@ public class MeatController : MonoBehaviour, ICuttable
                 statusFood = StatusFood.Cooked;
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(true);
+                meatBurned.SetActive(false);
+                _objectFood.ChangeId(ObjectId.MeatCooked);
                 break;
             case StatusFood.Cooked:
                 statusFood = StatusFood.Burned;
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(true);
+                _objectFood.ChangeId(ObjectId.MeatBurner);
                 break;
             case StatusFood.Burned:
                 break;
