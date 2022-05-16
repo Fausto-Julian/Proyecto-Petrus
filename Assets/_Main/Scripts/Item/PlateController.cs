@@ -59,7 +59,7 @@ public class PlateController : MonoBehaviour, IInteractable
 
     public bool DeliverTask()
     {
-        if (_food.Count > 1 || _food.Count == 0 || _food[0] == null)
+        if (_food.Count == 0 || _food[0] == null)
         {
             Debug.Log("no hay comida");
             return false;
