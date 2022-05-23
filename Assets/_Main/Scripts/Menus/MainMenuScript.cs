@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,9 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private Button tutorialButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private Button backOptionsButton;
+    [SerializeField] private Button backTutorialButton;
+    [SerializeField] private Button backCreditsButton;
 
     [SerializeField] private GameObject mainMenuObject;
     [SerializeField] private GameObject optionsObject;
@@ -23,11 +27,40 @@ public class MainMenuScript : MonoBehaviour
         tutorialButton.onClick.AddListener(OnTutorialButtonHandler);
         creditsButton.onClick.AddListener(OnCreditsButtonHandler);
         exitButton.onClick.AddListener(OnExitButtonHandler);
+        
+        backOptionsButton.onClick.AddListener(OnBackButtonHandler);
+        backTutorialButton.onClick.AddListener(OnBackButtonHandler);
+        backCreditsButton.onClick.AddListener(OnBackButtonHandler);
 
         mainMenuObject.SetActive(true);
         optionsObject.SetActive(false);
         tutorialObject.SetActive(false);
         creditsObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (optionsObject || tutorialObject || creditsObject)
+            {
+                mainMenuObject.SetActive(true);
+                optionsObject.SetActive(false);
+                tutorialObject.SetActive(false);
+                creditsObject.SetActive(false);
+            }
+        }
+    }
+
+    private void OnBackButtonHandler()
+    {
+        if (optionsObject || tutorialObject || creditsObject)
+        {
+            mainMenuObject.SetActive(true);
+            optionsObject.SetActive(false);
+            tutorialObject.SetActive(false);
+            creditsObject.SetActive(false);
+        }
     }
 
     private void OnPlayButtonHandler()
