@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cuttingPrefab: {fileID: 293171719047803664, guid: 2e1a7f2479f72be419d4b84220299013, type: 3}
+  countInstance: 3
 --- !u!114 &3015625903374697418
 MonoBehaviour:
   m_ObjectHideFlags: 0

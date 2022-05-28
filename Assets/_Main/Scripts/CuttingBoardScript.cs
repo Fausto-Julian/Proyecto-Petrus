@@ -4,6 +4,8 @@ using UnityEngine;
 public class CuttingBoardScript : MonoBehaviour, IInteractable
 {
     private List<ICuttable> objects = new List<ICuttable>();
+    
+    [HideInInspector] public float timer => _timer;
     private float _timer;
 
     private void OnCollisionEnter(Collision collision)

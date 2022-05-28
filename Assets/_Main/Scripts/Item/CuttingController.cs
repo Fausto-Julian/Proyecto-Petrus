@@ -12,7 +12,7 @@ public class CuttingController : MonoBehaviour, ICuttable
         for (var i = 0; i < countInstance; i++)
         {
             Instantiate(cuttingPrefab, position, rotation);
-            position += Vector3.right * 2.5f;
+            position += Vector3.right * 0.15f;
         }
         gameObject.SetActive(false);
     }

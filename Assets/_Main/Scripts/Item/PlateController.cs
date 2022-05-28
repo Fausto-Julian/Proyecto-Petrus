@@ -18,6 +18,8 @@ public class PlateController : MonoBehaviour, IInteractable
             var body = _food[i].GetComponent<Rigidbody>();
             body.useGravity = false;
             body.isKinematic = true;
+
+            Debug.Log("ES KINEMATICO");
         }
 
         yield return new WaitForSeconds(1f);
@@ -27,6 +29,8 @@ public class PlateController : MonoBehaviour, IInteractable
             var body = _food[i].GetComponent<Rigidbody>();
             body.useGravity = true;
             body.isKinematic = false;
+
+            Debug.Log("NO ES KINEMATICO");
         }
     }
 
@@ -34,7 +38,6 @@ public class PlateController : MonoBehaviour, IInteractable
     {
         if (food.gameObject.CompareTag("Object"))
         {
-            Debug.Log("Es un object de tipo: " + food);
             food.transform.SetParent(transform);
             _food.Add(food);
         }

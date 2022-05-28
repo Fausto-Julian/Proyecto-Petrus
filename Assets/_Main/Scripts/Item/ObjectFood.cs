@@ -23,7 +23,6 @@ public class ObjectFood : MonoBehaviour
             if (plateController != null)
             {
                 plateController.AddFood(gameObject);
-                Debug.Log(plateController);
             }
         }
     }
