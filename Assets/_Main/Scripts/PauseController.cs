@@ -32,7 +32,7 @@ namespace _Main.Scripts
         {
             continueButton.onClick.AddListener(OnContinueButtonHandler);
             optionsButton.onClick.AddListener(OnOptionsButtonHandler);
-            optionsButton.onClick.AddListener(OnBackOptionsButtonHandler);
+            backOptionsButton.onClick.AddListener(OnBackOptionsButtonHandler);
             backToMenuButton.onClick.AddListener(OnBackToMenuButtonHandler);
             exitButton.onClick.AddListener(OnExitButtonHandler);
             
@@ -61,6 +61,17 @@ namespace _Main.Scripts
         private void SetPause()
         {
             Time.timeScale = _pause ? 0 : 1;
+
+            switch (Cursor.lockState)
+            {
+                case CursorLockMode.Locked:
+                    Cursor.lockState = CursorLockMode.None;
+                    break;
+                case CursorLockMode.None:
+                    Cursor.lockState = CursorLockMode.Locked;
+                    break;
+            }
+
             pauseMainPanel.SetActive(_pause);
             optionsPanel.SetActive(false);
         }
