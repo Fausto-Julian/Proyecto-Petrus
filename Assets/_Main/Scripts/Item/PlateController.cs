@@ -39,6 +39,9 @@ public class PlateController : MonoBehaviour, IInteractable
         if (food.gameObject.CompareTag("Object"))
         {
             food.transform.SetParent(transform);
+            var body = food.gameObject.GetComponent<Rigidbody>();
+            body.useGravity = false;
+            body.isKinematic = true;
             _food.Add(food);
         }
     }

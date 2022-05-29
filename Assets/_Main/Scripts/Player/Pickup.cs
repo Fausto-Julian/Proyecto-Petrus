@@ -29,7 +29,11 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
                     pickLayerMask))
             {
-                ToolTipShow(infoText, hit.transform.gameObject.name.ToUpper());
+                var food = hit.transform.gameObject.GetComponent<ObjectFood>();
+                if (food != null)
+                {
+                    ToolTipShow(food.Description, food.name);
+                }
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {

@@ -29,11 +29,13 @@ public class TestHudOrderTask : MonoBehaviour
 
     public void ActiveImageTask(Sprite sprite)
     {
+        image.sprite = sprite;
+        /*
         if (!activeImage)
         {
             image.sprite = sprite;
             StartCoroutine(nameof(Active));
-        }
+        }*/
     }
 
     private IEnumerator Active()

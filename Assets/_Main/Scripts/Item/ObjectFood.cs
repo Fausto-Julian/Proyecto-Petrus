@@ -4,10 +4,14 @@ using UnityEngine;
 public class ObjectFood : MonoBehaviour
 {
     [SerializeField] private ObjectId id;
+    [SerializeField] private string name;
+    [SerializeField, Multiline()] private string description;
 
     private LayerMask _plateLayerMask;
 
     public ObjectId Id => id;
+    public string Name => name;
+    public string Description => description;
     
     private void Start()
     {

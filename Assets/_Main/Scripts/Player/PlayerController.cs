@@ -101,7 +101,8 @@ public class PlayerController : MonoBehaviour
         
 
         transform.rotation = rotation;
-        cameraPoint.rotation = Quaternion.Euler(cameraPoint.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f));
+        var mouseAngle = Mathf.Clamp(mouseInput.y, -75, 75);
+        cameraPoint.rotation = Quaternion.Euler(cameraPoint.rotation.eulerAngles + new Vector3(mouseAngle, 0f));
         
 
         if (Input.GetKey(KeyCode.Mouse1))
