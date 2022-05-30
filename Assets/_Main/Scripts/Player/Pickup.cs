@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour, ITooltipTrigger
 {
-    [SerializeField] private string infoText = "Press F for pickup";
+    //[SerializeField] private string infoText = "Press F for pickup";
     [SerializeField] private LayerMask pickLayerMask;
     
     private GameObject _objectPickup = null;
@@ -32,7 +32,7 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
                 var food = hit.transform.gameObject.GetComponent<ObjectFood>();
                 if (food != null)
                 {
-                    ToolTipShow(food.Description, food.name);
+                    ToolTipShow(food.Description, food.Name);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))

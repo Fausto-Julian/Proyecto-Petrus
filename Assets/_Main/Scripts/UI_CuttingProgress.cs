@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class UI_CuttingProgress : MonoBehaviour
 {
+    /*
     CuttingBoardScript cuttingBoardScript;
     private float _externalTimer;
     [SerializeField] private float _timerIndicator;
@@ -36,4 +37,5 @@ public class UI_CuttingProgress : MonoBehaviour
 
         }
     }
+    */
 }

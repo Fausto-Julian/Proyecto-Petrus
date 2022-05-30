@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4294570559655089834}
   - component: {fileID: 5498122157390441981}
   m_Layer: 7
-  m_Name: Tomate_Cortado
+  m_Name: sliceOfTomato
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,6 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 8
+  name: Alexandrian tomato slice
+  description: Ready to serve
 --- !u!65 &5498122157390441981
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4270134085908202837}
   - component: {fileID: 541326104027312958}
   m_Layer: 7
-  m_Name: ChoppedLetuce
+  m_Name: SlicedLetuce
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
+  name: Slice of letuce
+  description: Ready to serve
 --- !u!54 &4270134085908202837
 Rigidbody:
   m_ObjectHideFlags: 0

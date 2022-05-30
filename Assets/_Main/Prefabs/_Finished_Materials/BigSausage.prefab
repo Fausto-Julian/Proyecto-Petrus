@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 295657599118988895}
   - component: {fileID: 7522603673519101915}
   m_Layer: 7
-  m_Name: BigSausage
+  m_Name: BIgSausage
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 13
+  name: BIg Sausage
+  description: Ready to serve
 --- !u!65 &295657599118988895
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3098075776747151231}
   - component: {fileID: 3098075776747151232}
   m_Layer: 7
-  m_Name: MeatGreen
+  m_Name: GrennMeat
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554e951266044b16a0de59645d099849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  id: 0
+  name: Unicorn meat
+  description: Can be cooked
 --- !u!1001 &3098075777876982436
 PrefabInstance:
   m_ObjectHideFlags: 0

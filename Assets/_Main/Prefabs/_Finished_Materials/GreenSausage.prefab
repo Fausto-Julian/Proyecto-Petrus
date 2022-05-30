@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2820638269876294464}
   - component: {fileID: 2913153587705194601}
   m_Layer: 7
-  m_Name: SausageGreen
+  m_Name: GreenSausage
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
+  name: Unicorn Sausage
+  description: Ready to serve

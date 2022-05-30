@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1122509753148124306}
   - component: {fileID: 1122509753148124309}
   m_Layer: 7
-  m_Name: Pan_Rodaja
+  m_Name: SliceOfBread
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
+  name: Slice of bread
+  description: Can be cooked
 --- !u!1001 &1122509752803594653
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3015625903374697416}
   - component: {fileID: 3015625903374697418}
   m_Layer: 7
-  m_Name: Tomate_Entero
+  m_Name: wholeTomato
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,3 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 7
+  name: Alexandria tomato
+  description: Can be cut
