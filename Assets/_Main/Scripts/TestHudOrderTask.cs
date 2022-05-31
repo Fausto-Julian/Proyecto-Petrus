@@ -27,15 +27,21 @@ public class TestHudOrderTask : MonoBehaviour
         image.gameObject.SetActive(false);
     }
 
-    public void ActiveImageTask(Sprite sprite)
+    public void ActivateImageTask(Sprite sprite)
     {
         image.sprite = sprite;
+        image.gameObject.SetActive(true);
         /*
         if (!activeImage)
         {
             image.sprite = sprite;
             StartCoroutine(nameof(Active));
         }*/
+    }
+
+    public void DeactivateImageTask()
+    {
+        image.gameObject.SetActive(false);
     }
 
     private IEnumerator Active()

@@ -101,9 +101,13 @@ public class PlayerController : MonoBehaviour
         
 
         transform.rotation = rotation;
-        var mouseAngle = Mathf.Clamp(mouseInput.y, -75, 75);
-        cameraPoint.rotation = Quaternion.Euler(cameraPoint.rotation.eulerAngles + new Vector3(mouseAngle, 0f));
-        
+
+        mouseInput.y = -mouseInput.y;
+        var rotation1 = cameraPoint.rotation.eulerAngles;
+        var angleRaw = rotation1.x + mouseInput.y;
+        var mouseAngle = ModularClamp(angleRaw, 0, 60);
+        cameraPoint.rotation = Quaternion.Euler(new Vector3(angleRaw, rotation1.y, rotation1.z));
+
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
@@ -116,5 +120,14 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+    private float ModularClamp(float val, float min, float max, float rangemin = -180f, float rangemax = 180f) {
+
+        var modulus = Mathf.Abs(rangemax - rangemin);
+
+        if((val %= modulus) < 0f) val += modulus;
+
+        return Mathf.Clamp(val + Mathf.Min(rangemin, rangemax), min, max);
+
     }
 }

@@ -24,21 +24,36 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
 
     private void Update()
     {
-        if (_objectPickup == null)
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit2, 2f,
+                pickLayerMask))
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
-                    pickLayerMask))
+            var food = hit2.transform.gameObject.GetComponent<ObjectFood>();
+            if (food != null)
             {
-                var food = hit.transform.gameObject.GetComponent<ObjectFood>();
-                if (food != null)
-                {
-                    ToolTipShow(food.Description, food.Name);
-                }
+                ToolTipShow(food.Description, food.Name);
+            }
 
+            var plate = hit2.transform.gameObject.GetComponent<PlateController>();
+            if (plate != null)
+            {
+                plate.ActivateViewTask();
+            }
+        }
+        else
+        {
+            ToolTipHide();
+            TestHudOrderTask.Instance.DeactivateImageTask();
+        }
+        
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
+                pickLayerMask))
+        {
+            if (_objectPickup == null)
+            {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     _objectPickup = hit.transform.gameObject;
-                    
+
                     _bodyObjectPickup = _objectPickup.GetComponent<Rigidbody>();
 
                     _bodyObjectPickup.useGravity = false;
@@ -46,13 +61,13 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
 
                     var transform1 = transform;
                     _objectPickup.transform.position = transform1.position;
-                    _objectPickup.transform.rotation = transform1.rotation;
                     _objectPickup.transform.SetParent(transform1);
                     ToolTipHide();
+                    return;
                 }
             }
         }
-        else
+        if (_objectPickup != null)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {

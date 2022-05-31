@@ -18,7 +18,7 @@ public class GarbageController : MonoBehaviour
         _navMeshAgent.destination = garbageFloor.ObjectDrops.Count > 0 ? garbageFloor.ObjectDrops[0].transform.position : startPosition.position;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (garbageFloor.ObjectDrops.Count > 0)
         {

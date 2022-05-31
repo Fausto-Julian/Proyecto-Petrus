@@ -98,7 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   name: Unicorn meat
-  description: Can be cooked
+  description: 'Can be cooked
+
+    Can be cut'
 --- !u!1001 &3098075777876982436
 PrefabInstance:
   m_ObjectHideFlags: 0

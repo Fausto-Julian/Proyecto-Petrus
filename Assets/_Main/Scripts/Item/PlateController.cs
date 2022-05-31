@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateController : MonoBehaviour, IInteractable
+public class PlateController : MonoBehaviour
 {
     private OrderTaskSo _orderTask;
     private readonly List<GameObject> _food = new List<GameObject>();
@@ -113,8 +113,8 @@ public class PlateController : MonoBehaviour, IInteractable
         return completed;
     }
 
-    public void Interact()
+    public void ActivateViewTask()
     {
-        TestHudOrderTask.Instance.ActiveImageTask(_orderTask.ImageOrder);
+        TestHudOrderTask.Instance.ActivateImageTask(_orderTask.ImageOrder);
     }
 }
