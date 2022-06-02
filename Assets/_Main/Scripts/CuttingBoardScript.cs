@@ -36,8 +36,9 @@ public class CuttingBoardScript : MonoBehaviour, IInteractable
     {
         if(objects.Count > 0)
         {
+            HudManager.Instance.ActiveImageRadial(_timer, 2f);
             _timer += Time.deltaTime;
-            if(_timer > 1f)
+            if(_timer > 2f)
             {
                 objects[0].Cutting();
                 objects.RemoveAt(0);

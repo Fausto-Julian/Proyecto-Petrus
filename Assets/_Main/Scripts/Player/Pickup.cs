@@ -42,7 +42,8 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
         else
         {
             ToolTipHide();
-            TestHudOrderTask.Instance.DeactivateImageTask();
+            HudManager.Instance.DeactivateImageTask();
+            HudManager.Instance.DeactivateImagePickUp();
         }
         
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
@@ -50,6 +51,7 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
         {
             if (_objectPickup == null)
             {
+                HudManager.Instance.ActivateImagePickUp();
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     _objectPickup = hit.transform.gameObject;
@@ -63,6 +65,7 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
                     _objectPickup.transform.position = transform1.position;
                     _objectPickup.transform.SetParent(transform1);
                     ToolTipHide();
+                    HudManager.Instance.DeactivateImagePickUp();
                     return;
                 }
             }

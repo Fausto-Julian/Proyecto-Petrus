@@ -5,8 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement Controls")]
-    [SerializeField] private float walkSpeed;
+    [Header("Movement Controls")] [SerializeField]
+    private float walkSpeed;
+
     [SerializeField] private float runSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform groundCheckPoint;
@@ -17,17 +18,19 @@ public class PlayerController : MonoBehaviour
     private bool _canJump;
     private Vector3 _moveInput;
 
-    [Header("Gravity")]
-    [SerializeField] private float gravityModifier;
+    [Header("Gravity")] [SerializeField] private float gravityModifier;
 
     [Header("Camera Controls")]
     [SerializeField] private float mouseSensitivity;
+
     [SerializeField] private bool invertX;
     [SerializeField] private bool invertY;
     [SerializeField] private Transform cameraPoint;
+    private float _angleCamera = 0;
 
     private CharacterController _characterController;
     private Animator _anim;
+
 
     private void Awake()
     {
@@ -82,9 +85,33 @@ public class PlayerController : MonoBehaviour
         }
 
         _characterController.Move(_moveInput * Time.deltaTime);
+        
+        CameraController();
 
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f, interactLayer))
+        {
+            HudManager.Instance.ActivateImageInteract();
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                    HudManager.Instance.DeactivateImageInteract();
+                }
+            }
+        }
+        else
+        {
+            HudManager.Instance.DeactivateImageInteract();
+        }
+    }
+
+    private void CameraController()
+    {
         // Camera Controller
-        var mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
+        
+        var mouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * mouseSensitivity;
 
         if (invertX)
         {
@@ -96,38 +123,15 @@ public class PlayerController : MonoBehaviour
             mouseInput.y = -mouseInput.y;
         }
 
-        var rotation = transform.rotation;
-        rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y + mouseInput.x, rotation.eulerAngles.z);
-        
-
-        transform.rotation = rotation;
+        var rotationAnglesPlayerBody = transform.eulerAngles;
+        transform.rotation = Quaternion.Euler(rotationAnglesPlayerBody.x, rotationAnglesPlayerBody.y + mouseInput.x, rotationAnglesPlayerBody.z);
 
         mouseInput.y = -mouseInput.y;
-        var rotation1 = cameraPoint.rotation.eulerAngles;
-        var angleRaw = rotation1.x + mouseInput.y;
-        var mouseAngle = ModularClamp(angleRaw, 0, 60);
-        cameraPoint.rotation = Quaternion.Euler(new Vector3(angleRaw, rotation1.y, rotation1.z));
 
-
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f, interactLayer))
-            {
-                var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-                if (interactable != null)
-                {
-                    interactable.Interact();
-                }
-            }
-        }
-    }
-    private float ModularClamp(float val, float min, float max, float rangemin = -180f, float rangemax = 180f) {
-
-        var modulus = Mathf.Abs(rangemax - rangemin);
-
-        if((val %= modulus) < 0f) val += modulus;
-
-        return Mathf.Clamp(val + Mathf.Min(rangemin, rangemax), min, max);
-
+        _angleCamera += mouseInput.y;
+        
+        _angleCamera = Mathf.Clamp(_angleCamera, -75, 75);
+        
+        cameraPoint.localEulerAngles = new Vector3(_angleCamera, 0f, 0f);
     }
 }

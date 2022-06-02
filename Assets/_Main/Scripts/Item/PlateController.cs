@@ -115,6 +115,6 @@ public class PlateController : MonoBehaviour
 
     public void ActivateViewTask()
     {
-        TestHudOrderTask.Instance.ActivateImageTask(_orderTask.ImageOrder);
+        HudManager.Instance.ActivateImageTask(_orderTask.ImageOrder);
     }
 }
