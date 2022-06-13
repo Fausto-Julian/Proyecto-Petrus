@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CuttingBoardScript : MonoBehaviour, IInteractable
 {
+    [SerializeField] private ParticleSystem poofParticle;
     private List<ICuttable> objects = new List<ICuttable>();
     
     [HideInInspector] public float timer => _timer;
@@ -40,6 +41,8 @@ public class CuttingBoardScript : MonoBehaviour, IInteractable
             _timer += Time.deltaTime;
             if(_timer > 2f)
             {
+                poofParticle.Play();
+
                 objects[0].Cutting();
                 objects.RemoveAt(0);
                 _timer = 0f;
