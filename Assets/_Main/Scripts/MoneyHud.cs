@@ -1,6 +1,4 @@
-﻿
-using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class MoneyHud : MonoBehaviour

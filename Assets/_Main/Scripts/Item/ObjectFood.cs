@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
 
 public class ObjectFood : MonoBehaviour
@@ -27,8 +27,18 @@ public class ObjectFood : MonoBehaviour
             if (plateController != null)
             {
                 plateController.AddFood(gameObject);
+                StartCoroutine(nameof(ConvertToStatic));
             }
         }
+    }
+
+    private IEnumerator ConvertToStatic()
+    {
+        yield return new WaitForSeconds(1.5f);
+        var body = GetComponent<Rigidbody>();
+        body.velocity = Vector3.zero;
+        body.isKinematic = true;
+        body.useGravity = false;
     }
 
     public void ChangeId(ObjectId newId)
