@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -126,6 +128,10 @@ public class PlayerController : MonoBehaviour
 
         mouseInput.y = -mouseInput.y;
 
+        _angleCamera += mouseInput.y;
         
+        _angleCamera = Mathf.Clamp(_angleCamera, -75, 75);
+        
+        cameraPoint.localEulerAngles = new Vector3(_angleCamera, 0f, 0f);
     }
 }
