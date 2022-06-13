@@ -83,7 +83,7 @@ MonoBehaviour:
   meatRaw: {fileID: 1100058734329780133}
   meatCooked: {fileID: 1604246338906429161}
   meatBurned: {fileID: 1225238842784165585}
-  cuttingPrefab: {fileID: 8481419325820720904, guid: 1ac665e90c851fd40a79f377820401e4, type: 3}
+  cuttingPrefab: {fileID: 1457605821367889325, guid: 32b708ee70a400349bb420cc837adc77, type: 3}
 --- !u!114 &3098075776747151232
 MonoBehaviour:
   m_ObjectHideFlags: 0

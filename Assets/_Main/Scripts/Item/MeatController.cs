@@ -45,7 +45,7 @@ public class MeatController : MonoBehaviour, ICuttable
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(true);
-                _objectFood.ChangeId(ObjectId.MeatBurner);
+                _objectFood.ChangeId(ObjectId.MeatBurned);
                 break;
             default:
                 meatRaw.SetActive(true);
@@ -97,7 +97,7 @@ public class MeatController : MonoBehaviour, ICuttable
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(true);
-                _objectFood.ChangeId(ObjectId.MeatBurner);
+                _objectFood.ChangeId(ObjectId.MeatBurned);
                 break;
             case StatusFood.Burned:
                 break;
@@ -113,8 +113,7 @@ public class MeatController : MonoBehaviour, ICuttable
         var position = transform.position;
         var rotation = transform.rotation;
         Instantiate(cuttingPrefab, position, rotation);
-        Instantiate(cuttingPrefab, position, rotation);
-        Instantiate(cuttingPrefab, position, rotation);
+
         gameObject.SetActive(false);
     }
 }

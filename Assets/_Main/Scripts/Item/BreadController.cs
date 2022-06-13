@@ -37,7 +37,7 @@ public class BreadController : MonoBehaviour
                 breadRaw.SetActive(false);
                 breadToasted.SetActive(false);
                 breadBurned.SetActive(true);
-                _objectFood.ChangeId(ObjectId.BreadBurner);
+                _objectFood.ChangeId(ObjectId.BreadBurned);
                 break;
             default:
                 breadRaw.SetActive(true);
@@ -89,7 +89,7 @@ public class BreadController : MonoBehaviour
                 breadRaw.SetActive(false);
                 breadToasted.SetActive(false);
                 breadBurned.SetActive(true);
-                _objectFood.ChangeId(ObjectId.BreadBurner);
+                _objectFood.ChangeId(ObjectId.BreadBurned);
                 break;
             case StatusFood.Burned:
                 break;
