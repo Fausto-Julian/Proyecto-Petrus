@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                SubtractMoney(20);
+                SubtractMoney(10);
                 Debug.Log("No es lo que pidio el cliente, otra mas asi y te despido. Te quito $20 de tu cuenta");
             }
         }

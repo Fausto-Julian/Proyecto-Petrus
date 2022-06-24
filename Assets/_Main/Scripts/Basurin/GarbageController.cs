@@ -5,6 +5,8 @@ public class GarbageController : MonoBehaviour
 {
     [SerializeField] private Transform startPosition;
     [SerializeField] private GarbageFloor garbageFloor;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip soundClip;
     
     private NavMeshAgent _navMeshAgent;
     
@@ -27,6 +29,7 @@ public class GarbageController : MonoBehaviour
                 if (other.gameObject == garbageFloor.ObjectDrops[i])
                 {
                     garbageFloor.ObjectDrops.Remove(garbageFloor.ObjectDrops[i]);
+                    source.PlayOneShot(soundClip);
                     Destroy(other.gameObject);
                 }
             }

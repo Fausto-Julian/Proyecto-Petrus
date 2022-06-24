@@ -19,6 +19,11 @@ public class MeatController : MonoBehaviour, ICuttable
     [SerializeField] private GameObject meatBurned;
     [SerializeField] private GameObject cuttingPrefab;
 
+    [Header("Sounds")]
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip audioClip;
+
+    private bool _audioPlay;
     private float _cookingTimer;
 
     private bool _isCooking;
@@ -28,7 +33,7 @@ public class MeatController : MonoBehaviour, ICuttable
     private void Start()
     {
         _objectFood = GetComponent<ObjectFood>();
-        
+        _audioPlay = true;
         _cookingTimer = timeCooking;
         switch (statusFood)
         {
@@ -65,10 +70,17 @@ public class MeatController : MonoBehaviour, ICuttable
         {
             _cookingTimer -= Time.deltaTime;
 
+            if (_audioPlay && statusFood != StatusFood.Burned)
+            {
+                source.PlayOneShot(audioClip);
+                _audioPlay = false;
+            }
+
             if (_cookingTimer < 0)
             {
                 ChangeStateMeat();
-                _cookingTimer = timeCooking + 2.5f;
+                _cookingTimer = timeCooking;
+                _audioPlay = true;
             }
         }
     }
