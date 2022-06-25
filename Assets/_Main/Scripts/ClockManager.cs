@@ -5,7 +5,6 @@ public class ClockManager : MonoBehaviour
 {
     public static ClockManager Instance;
 
-    [SerializeField] private float startTimeSeconds;
     [SerializeField, Range(-10f, 10f)] private float scaleTime = 1;
 
     private float _scaleDefault;
@@ -31,16 +30,18 @@ public class ClockManager : MonoBehaviour
     private void Start()
     {
         _scaleDefault = scaleTime;
-        _time = startTimeSeconds;
-        
-        UpdateClock();
     }
 
     private void Update()
     {
-        _time += Time.deltaTime * scaleTime;
+        if (!GameManager.Instance.GetPause())
+        {
+            _time += Time.deltaTime * scaleTime;
 
-        UpdateClock();
+            UpdateClock();
+        }
+        
+        Debug.Log(_timeText);
     }
 
     private void UpdateClock()
@@ -99,5 +100,11 @@ public class ClockManager : MonoBehaviour
     public string GetTimeText()
     {
         return _timeText;
+    }
+
+    public void SetTimeInHour(int hour)
+    {
+        _time = hour * 3600;
+        UpdateClock();
     }
 }

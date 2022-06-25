@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float startMoney;
     [SerializeField] private OrderTaskTable orderTaskTable;
 
-    private float _currentMoney;
+    private float _money;
+    private float _currentMoneyDaily;
+    private bool _pause;
 
     private void Awake()
     {
@@ -25,7 +27,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _currentMoney = startMoney;
+        _currentMoneyDaily = startMoney;
+        _money = startMoney;
     }
 
     public void AddMoney(float money)
@@ -35,36 +38,59 @@ public class GameManager : MonoBehaviour
             money = 0;
         }
 
-        _currentMoney += money;
+        _currentMoneyDaily += money;
+        _money += money;
     }
-
+    
     public void SubtractMoney(float subtractMoney)
     {
-        if (_currentMoney - subtractMoney < 0)
+        var newMoneyDaily = _currentMoneyDaily - subtractMoney;
+        var newMoney = _money - subtractMoney;
+        
+        if (newMoneyDaily < 0)
         {
-            _currentMoney = 0;
+            if (newMoney < 0)
+            {
+                _money = 0;
+            }
+            else
+            {
+                _money -= subtractMoney;
+            }
+            _currentMoneyDaily = 0;
         }
         else
         {
-            _currentMoney -= subtractMoney;
+            _currentMoneyDaily = newMoneyDaily;
+            _money = newMoney;
         }
     }
 
     public float GetMoney()
     {
-        return _currentMoney;
+        return _money;
+    }
+    
+    public float GetMoneyDaily()
+    {
+        return _currentMoneyDaily;
+    }
+
+    public void ResetDay()
+    {
+        _currentMoneyDaily = 0;
     }
 
     public void DeliverTask(GameObject plate)
     {
         var plateController = plate.GetComponent<PlateController>();
-
+        
         if (plateController != null)
         {
             if (plateController.DeliverTask())
             {
                 AddMoney(20);
-                Debug.Log("Tarea Hecha correctamente!! Felicitaciones! se le agrego $20 a su cuenta");
+                Debug.Log("Tarea Hecha correctamente!! Felicitaciones! Se le agrego $20 a su cuenta");
             }
             else
             {
@@ -73,10 +99,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        
         orderTaskTable.RemoveTask(plate);
         Destroy(plate);
         orderTaskTable.AddTask();
     }
-    
+
+    public void SetPause(bool isPause)
+    {
+        _pause = isPause;
+    }
+
+    public bool GetPause()
+    {
+        return _pause;
+    }
 }

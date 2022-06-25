@@ -18,8 +18,10 @@ public class OrderTaskTable : MonoBehaviour
 
         for (var i = 0; i < _plates.Length; i++)
         {
-            _plates[i] = new Plate();
-            _plates[i].Transform = spawnsPlates[i];
+            _plates[i] = new Plate
+            {
+                Transform = spawnsPlates[i]
+            };
         }
     }
 

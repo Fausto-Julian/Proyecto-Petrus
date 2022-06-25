@@ -24,70 +24,74 @@ public class Pickup : MonoBehaviour, ITooltipTrigger
 
     private void Update()
     {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit2, 2f,
+        if (!GameManager.Instance.GetPause())
+        {
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit2, 2f,
                 pickLayerMask))
-        {
-            var food = hit2.transform.gameObject.GetComponent<ObjectFood>();
-            if (food != null)
             {
-                ToolTipShow(food.Description, food.Name);
-            }
-
-            var plate = hit2.transform.gameObject.GetComponent<PlateController>();
-            if (plate != null)
-            {
-                plate.ActivateViewTask();
-            }
-        }
-        else
-        {
-            ToolTipHide();
-            HudManager.Instance.DeactivateImageTask();
-            HudManager.Instance.DeactivateImagePickUp();
-        }
-        
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
-                pickLayerMask))
-        {
-            if (_objectPickup == null)
-            {
-                HudManager.Instance.ActivateImagePickUp();
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    _objectPickup = hit.transform.gameObject;
-
-                    _bodyObjectPickup = _objectPickup.GetComponent<Rigidbody>();
-
-                    _bodyObjectPickup.useGravity = false;
-                    _bodyObjectPickup.isKinematic = true;
-
-                    var transform1 = transform;
-                    _objectPickup.transform.position = transform1.position;
-                    _objectPickup.transform.SetParent(transform1);
-                    ToolTipHide();
-                    HudManager.Instance.DeactivateImagePickUp();
-                    return;
-                }
-            }
-        }
-        if (_objectPickup != null)
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                _objectPickup.transform.SetParent(null);
-                
-                var food = _objectPickup.GetComponent<ObjectFood>();
-                
+                var food = hit2.transform.gameObject.GetComponent<ObjectFood>();
                 if (food != null)
                 {
-                    food.ShootRaycast();
+                    ToolTipShow(food.Description, food.Name);
                 }
 
-                _bodyObjectPickup.useGravity = true;
-                _bodyObjectPickup.isKinematic = false;
+                var plate = hit2.transform.gameObject.GetComponent<PlateController>();
+                if (plate != null)
+                {
+                    plate.ActivateViewTask();
+                }
+            }
+            else
+            {
+                ToolTipHide();
+                HudManager.Instance.DeactivateImageTask();
+                HudManager.Instance.DeactivateImagePickUp();
+            }
+            
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f,
+                    pickLayerMask))
+            {
+                if (_objectPickup == null)
+                {
+                    HudManager.Instance.ActivateImagePickUp();
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        _objectPickup = hit.transform.gameObject;
 
-                _objectPickup = null;
-                _bodyObjectPickup = null;
+                        _bodyObjectPickup = _objectPickup.GetComponent<Rigidbody>();
+
+                        _bodyObjectPickup.useGravity = false;
+                        _bodyObjectPickup.isKinematic = true;
+
+                        var transform1 = transform;
+                        _objectPickup.transform.position = transform1.position;
+                        _objectPickup.transform.SetParent(transform1);
+                        ToolTipHide();
+                        HudManager.Instance.DeactivateImagePickUp();
+                        return;
+                    }
+                }
+            }
+            
+            if (_objectPickup != null)
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    _objectPickup.transform.SetParent(null);
+                    
+                    var food = _objectPickup.GetComponent<ObjectFood>();
+                    
+                    if (food != null)
+                    {
+                        food.ShootRaycast();
+                    }
+
+                    _bodyObjectPickup.useGravity = true;
+                    _bodyObjectPickup.isKinematic = false;
+
+                    _objectPickup = null;
+                    _bodyObjectPickup = null;
+                }
             }
         }
     }

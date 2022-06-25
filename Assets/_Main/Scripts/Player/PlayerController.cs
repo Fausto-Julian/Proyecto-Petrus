@@ -42,68 +42,71 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Alternate Speed Walk And Run
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (!GameManager.Instance.GetPause())
         {
-            _currentSpeed = runSpeed;
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            _currentSpeed = walkSpeed;
-        }
-
-        // Movement
-        var yStorage = _moveInput.y;
-
-        var horizontalMove = transform.right * Input.GetAxis("Horizontal");
-        var verticalMove = transform.forward * Input.GetAxis("Vertical");
-
-        _moveInput = horizontalMove + verticalMove;
-        _moveInput.Normalize();
-        _moveInput = _moveInput * _currentSpeed;
-
-        _anim.SetFloat("moveSpeed", _moveInput.magnitude);
-
-        _moveInput.y = yStorage;
-
-        // Gravity
-        _moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
-
-        if (_characterController.isGrounded)
-        {
-            _moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
-        }
-
-        // Jump
-        _canJump = Physics.OverlapSphere(groundCheckPoint.position, 2f, whatIsGround).Length > 0;
-
-        if (Input.GetButtonDown("Jump") && _canJump)
-        {
-            _moveInput.y = jumpForce;
-        }
-
-        _characterController.Move(_moveInput * Time.deltaTime);
-        
-        CameraController();
-
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f, interactLayer))
-        {
-            HudManager.Instance.ActivateImageInteract();
-            if (Input.GetKey(KeyCode.Mouse1))
+            // Alternate Speed Walk And Run
+                    
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-                if (interactable != null)
+                _currentSpeed = runSpeed;
+            }
+    
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                _currentSpeed = walkSpeed;
+            }
+    
+            // Movement
+            var yStorage = _moveInput.y;
+    
+            var horizontalMove = transform.right * Input.GetAxis("Horizontal");
+            var verticalMove = transform.forward * Input.GetAxis("Vertical");
+    
+            _moveInput = horizontalMove + verticalMove;
+            _moveInput.Normalize();
+            _moveInput = _moveInput * _currentSpeed;
+    
+            _anim.SetFloat("moveSpeed", _moveInput.magnitude);
+    
+            _moveInput.y = yStorage;
+    
+            // Gravity
+            _moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
+    
+            if (_characterController.isGrounded)
+            {
+                _moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
+            }
+    
+            // Jump
+            _canJump = Physics.OverlapSphere(groundCheckPoint.position, 2f, whatIsGround).Length > 0;
+    
+            if (Input.GetButtonDown("Jump") && _canJump)
+            {
+                _moveInput.y = jumpForce;
+            }
+    
+            _characterController.Move(_moveInput * Time.deltaTime);
+            
+            CameraController();
+    
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 2f, interactLayer))
+            {
+                HudManager.Instance.ActivateImageInteract();
+                if (Input.GetKey(KeyCode.Mouse1))
                 {
-                    interactable.Interact();
-                    HudManager.Instance.DeactivateImageInteract();
+                    var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                    if (interactable != null)
+                    {
+                        interactable.Interact();
+                        HudManager.Instance.DeactivateImageInteract();
+                    }
                 }
             }
-        }
-        else
-        {
-            HudManager.Instance.DeactivateImageInteract();
+            else
+            {
+                HudManager.Instance.DeactivateImageInteract();
+            }
         }
     }
 

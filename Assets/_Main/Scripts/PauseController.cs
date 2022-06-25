@@ -19,12 +19,11 @@ namespace _Main.Scripts
         [SerializeField] private GameObject pauseMainPanel;
         [SerializeField] private GameObject optionsPanel;
         
-        private bool _pause;
         private bool _activeOptionsPanel;
+        private bool _pauseMenu;
 
         private void Awake()
         {
-            _pause = false;
             _activeOptionsPanel = false;
         }
 
@@ -52,7 +51,7 @@ namespace _Main.Scripts
                 }
                 else
                 {
-                    _pause = !_pause;
+                    GameManager.Instance.SetPause(true);
                     SetPause();
                 }
             }
@@ -60,7 +59,7 @@ namespace _Main.Scripts
 
         private void SetPause()
         {
-            Time.timeScale = _pause ? 0 : 1;
+            Time.timeScale = GameManager.Instance.GetPause() ? 0 : 1;
 
             switch (Cursor.lockState)
             {
@@ -72,13 +71,13 @@ namespace _Main.Scripts
                     break;
             }
 
-            pauseMainPanel.SetActive(_pause);
+            pauseMainPanel.SetActive(GameManager.Instance.GetPause());
             optionsPanel.SetActive(false);
         }
 
         private void OnContinueButtonHandler()
         {
-            _pause = false;
+            GameManager.Instance.SetPause(false);
             SetPause();
         }
 
