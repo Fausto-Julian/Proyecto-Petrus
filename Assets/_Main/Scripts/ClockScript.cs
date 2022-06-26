@@ -1,10 +1,12 @@
 using UnityEngine;
+using TMPro;
 
 public class ClockScript : MonoBehaviour
 {
     [SerializeField] private GameObject hourHand;
     [SerializeField] private GameObject minHand;
     [SerializeField] private GameObject secHand;
+    [SerializeField] private TextMeshPro digitalTextClock;
 
     private int _hourTime;
     private int _minTime;
@@ -20,7 +22,9 @@ public class ClockScript : MonoBehaviour
         _secTime = ClockManager.Instance.GetTimeInSeconds();
         _textTime = ClockManager.Instance.GetTimeText();
 
-        
+        digitalTextClock.text = ClockManager.Instance.GetTimeTextPro();
+
+
         updateClock();
         
 
@@ -30,7 +34,9 @@ public class ClockScript : MonoBehaviour
     private void updateClock()
     {
         secHand.transform.rotation = Quaternion.Euler(0, 90,  _secTime * 6);
-        Debug.Log("CAMBIO A: " + _secTime);
+        minHand.transform.rotation = Quaternion.Euler(0, 90, _minTime * 6);
+        hourHand.transform.rotation = Quaternion.Euler(0, 90, _hourTime * 30);
+        Debug.Log("CAMBIO A: " + _hourTime + " : " + _minTime + " : " + _secTime);
     }
 
 }

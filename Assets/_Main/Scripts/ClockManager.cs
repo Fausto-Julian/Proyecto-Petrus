@@ -10,6 +10,7 @@ public class ClockManager : MonoBehaviour
     private float _scaleDefault;
     private float _time;
     private string _timeText;
+    private string _timeTextPro;
 
     private int _hour;
     private int _minutes;
@@ -57,6 +58,8 @@ public class ClockManager : MonoBehaviour
 
 
         _timeText = $"{_hour}:{_minutes}:{_seconds}";
+        //No es lo mas barato, pero sirve por ahora
+        _timeTextPro = string.Format("{00}:{01}:{02}", _hour.ToString("00"), _minutes.ToString("00"), _seconds.ToString("00"));
     }
 
     public void ResetDefaultScale()
@@ -100,6 +103,11 @@ public class ClockManager : MonoBehaviour
     public string GetTimeText()
     {
         return _timeText;
+    }
+
+    public string GetTimeTextPro()
+    {
+        return _timeTextPro;
     }
 
     public void SetTimeInHour(int hour)
