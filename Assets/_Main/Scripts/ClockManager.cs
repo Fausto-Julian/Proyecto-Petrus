@@ -5,7 +5,7 @@ public class ClockManager : MonoBehaviour
 {
     public static ClockManager Instance;
 
-    [SerializeField, Range(-10f, 10f)] private float scaleTime = 1;
+    [SerializeField, Range(-100f, 100f)] private float scaleTime = 1;
 
     private float _scaleDefault;
     private float _time;
@@ -41,7 +41,7 @@ public class ClockManager : MonoBehaviour
             UpdateClock();
         }
         
-        Debug.Log(_timeText);
+        //Debug.Log(_timeText);
     }
 
     private void UpdateClock()

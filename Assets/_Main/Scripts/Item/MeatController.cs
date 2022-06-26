@@ -12,6 +12,7 @@ public enum StatusFood
 
 public class MeatController : MonoBehaviour, ICuttable
 {
+    [SerializeField] private bool isCube;
     [SerializeField] private StatusFood statusFood;
     [SerializeField] private float timeCooking;
     [SerializeField] private GameObject meatRaw;
@@ -41,25 +42,41 @@ public class MeatController : MonoBehaviour, ICuttable
                 meatRaw.SetActive(true);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(false);
-                _objectFood.ChangeId(ObjectId.MeatRaw);
+                if(isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatRaw);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatRaw);
                 break;
             case StatusFood.Cooked:
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(true);
                 meatBurned.SetActive(false);
-                _objectFood.ChangeId(ObjectId.MeatCooked);
+                if (isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatCooked);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatCooked);
                 break;
             case StatusFood.Burned:
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(true);
-                _objectFood.ChangeId(ObjectId.MeatBurned);
+                if (isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatBurned);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatBurned);
                 break;
             default:
                 meatRaw.SetActive(true);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(false);
-                _objectFood.ChangeId(ObjectId.MeatRaw);
+                if (isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatRaw);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatRaw);
                 break;
         }
     }
@@ -105,18 +122,32 @@ public class MeatController : MonoBehaviour, ICuttable
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(true);
                 meatBurned.SetActive(false);
-                _objectFood.ChangeId(ObjectId.MeatCooked);
+                if (isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatCooked);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatCooked);
                 break;
             case StatusFood.Cooked:
                 statusFood = StatusFood.Burned;
                 meatRaw.SetActive(false);
                 meatCooked.SetActive(false);
                 meatBurned.SetActive(true);
-                _objectFood.ChangeId(ObjectId.MeatBurned);
+                if (isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatBurned);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatBurned);
                 break;
             case StatusFood.Burned:
                 break;
             default:
+                if (isCube)
+                {
+                    _objectFood.ChangeId(ObjectId.CubeMeatRaw);
+                }
+                else _objectFood.ChangeId(ObjectId.MeatRaw);
+                statusFood = StatusFood.Raw;
                 meatRaw.SetActive(true);
                 meatCooked.SetActive(false);
                 break;

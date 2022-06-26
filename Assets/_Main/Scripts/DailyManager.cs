@@ -1,5 +1,6 @@
 ﻿
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class DailyManager : MonoBehaviour
 
     [Header("Reference")] 
     [SerializeField] private GameObject finishDayPanel;
-    [SerializeField] private Text textMoney;
+    [SerializeField] private TextMeshProUGUI textMoney;
     [SerializeField] private Button nextDayButton;
 
     private int _day = 1;

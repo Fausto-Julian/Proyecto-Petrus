@@ -42,6 +42,8 @@ public class PlateController : MonoBehaviour
             var body = food.gameObject.GetComponent<Rigidbody>();
             body.useGravity = false;
             body.isKinematic = true;
+            //--------
+
             _food.Add(food);
         }
     }
@@ -50,6 +52,8 @@ public class PlateController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Object"))
         {
+            
+
             other.transform.SetParent(null);
             if (_food.Contains(other.gameObject))
             {
@@ -87,13 +91,15 @@ public class PlateController : MonoBehaviour
         }
 
         var completed = true;
-        for (var j = 0; j < _food.Count; j++)
+        
+        for (var i = 0; i < _orderTask.Ingredients.Count; i++)
         {
-            var idFood = _food[j].GetComponent<ObjectFood>().Id;
             if (completed)
             {
-                for (var i = 0; i < _orderTask.Ingredients.Count; i++)
+                for (var j = 0; j < _food.Count; j++)
                 {
+                    var idFood = _food[j].GetComponent<ObjectFood>().Id;
+
                     Debug.Log(_orderTask.Ingredients[i]);
                     if (_orderTask.Ingredients[i] == idFood)
                     {
@@ -104,6 +110,7 @@ public class PlateController : MonoBehaviour
 
                     completed = false;
                 }
+                
             }
             else
             {

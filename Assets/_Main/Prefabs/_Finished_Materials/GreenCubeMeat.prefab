@@ -49,12 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08ee33eced03bd44b1892d780bf13e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCube: 1
   statusFood: 0
   timeCooking: 5
   meatRaw: {fileID: 8534169128709294061}
   meatCooked: {fileID: 7526681549253123142}
   meatBurned: {fileID: 6479275874013568010}
   cuttingPrefab: {fileID: 0}
+  source: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!54 &1539082530374505847
 Rigidbody:
   m_ObjectHideFlags: 0
