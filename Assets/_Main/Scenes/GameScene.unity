@@ -832,8 +832,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250403616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.8149996, y: 3, z: -4.534783}
-  m_LocalScale: {x: 0.25, y: 6, z: 1.4304346}
+  m_LocalPosition: {x: 5.8149996, y: 3, z: -4.659783}
+  m_LocalScale: {x: 0.25, y: 6, z: 1.6804746}
   m_Children: []
   m_Father: {fileID: 2021404300}
   m_RootOrder: 13
@@ -1318,7 +1318,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9759bb856eb1feb41894af1fc2bd17ad, type: 2}
+  - {fileID: 2100000, guid: c78e9f650c8e95942a25c85486289d60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2109,7 +2109,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6f6d2aef3d371b54e9898ea3c4984f1c, type: 2}
+  - {fileID: 2100000, guid: c78e9f650c8e95942a25c85486289d60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4886,7 +4886,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 945cdce7396953946b995d084f971324, type: 2}
+  - {fileID: 2100000, guid: c78e9f650c8e95942a25c85486289d60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5376,7 +5376,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc0e227d60e8dd74e90b71f0cadb2382, type: 2}
+  - {fileID: 2100000, guid: 5890995a8a1171b4a9ae45a449399989, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6920,6 +6920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MesaEmplatado
       objectReference: {fileID: 0}
+    - target: {fileID: 7264291777951105658, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a9656d573ab6494da4f3d9890a93875, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
 --- !u!1001 &7288941865978641249
@@ -7079,5 +7083,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mesa de Entrega
       objectReference: {fileID: 0}
+    - target: {fileID: 8609403277237116030, guid: 04610c4cc30e2194b9b59175eb288792, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609403277237116030, guid: 04610c4cc30e2194b9b59175eb288792, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 854298c63225b864bac2b5ce81df006c, type: 2}
+    - target: {fileID: 8609403277237116030, guid: 04610c4cc30e2194b9b59175eb288792, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a9656d573ab6494da4f3d9890a93875, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04610c4cc30e2194b9b59175eb288792, type: 3}
