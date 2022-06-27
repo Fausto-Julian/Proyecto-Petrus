@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554e951266044b16a0de59645d099849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  id: 7
   name: Slice of bread
   description: Can be cooked
 --- !u!82 &4467190282583295843

@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554e951266044b16a0de59645d099849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 8
+  id: 11
   name: Alexandrian tomato slice
   description: Ready to serve
 --- !u!65 &5498122157390441981

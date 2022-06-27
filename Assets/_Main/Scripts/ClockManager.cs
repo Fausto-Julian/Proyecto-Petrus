@@ -5,11 +5,12 @@ public class ClockManager : MonoBehaviour
 {
     public static ClockManager Instance;
 
-    [SerializeField, Range(-10f, 10f)] private float scaleTime = 1;
+    [SerializeField, Range(-100f, 100f)] private float scaleTime = 1;
 
     private float _scaleDefault;
     private float _time;
     private string _timeText;
+    private string _timeTextPro;
 
     private int _hour;
     private int _minutes;
@@ -41,7 +42,7 @@ public class ClockManager : MonoBehaviour
             UpdateClock();
         }
         
-        Debug.Log(_timeText);
+        //Debug.Log(_timeText);
     }
 
     private void UpdateClock()
@@ -57,6 +58,8 @@ public class ClockManager : MonoBehaviour
 
 
         _timeText = $"{_hour}:{_minutes}:{_seconds}";
+        //No es lo mas barato, pero sirve por ahora
+        _timeTextPro = string.Format("{00}:{01}:{02}", _hour.ToString("00"), _minutes.ToString("00"), _seconds.ToString("00"));
     }
 
     public void ResetDefaultScale()
@@ -100,6 +103,11 @@ public class ClockManager : MonoBehaviour
     public string GetTimeText()
     {
         return _timeText;
+    }
+
+    public string GetTimeTextPro()
+    {
+        return _timeTextPro;
     }
 
     public void SetTimeInHour(int hour)

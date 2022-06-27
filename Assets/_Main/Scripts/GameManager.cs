@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float startMoney;
     [SerializeField] private OrderTaskTable orderTaskTable;
+    [SerializeField] private AudioSource audioSource;
 
     private float _money;
     private float _currentMoneyDaily;
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
     {
         _currentMoneyDaily = startMoney;
         _money = startMoney;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void AddMoney(float money)
@@ -89,13 +92,12 @@ public class GameManager : MonoBehaviour
         {
             if (plateController.DeliverTask())
             {
+                audioSource.Play();
                 AddMoney(20);
-                Debug.Log("Tarea Hecha correctamente!! Felicitaciones! Se le agrego $20 a su cuenta");
             }
             else
             {
                 SubtractMoney(10);
-                Debug.Log("No es lo que pidio el cliente, otra mas asi y te despido. Te quito $20 de tu cuenta");
             }
         }
 

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554e951266044b16a0de59645d099849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 9
+  id: 12
   name: Letuce
   description: Can be cut
 --- !u!54 &9167600071022931993

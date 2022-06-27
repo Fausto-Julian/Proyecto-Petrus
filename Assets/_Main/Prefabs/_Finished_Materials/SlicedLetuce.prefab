@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554e951266044b16a0de59645d099849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 10
+  id: 13
   name: Slice of letuce
   description: Ready to serve
 --- !u!54 &4270134085908202837
