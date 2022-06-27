@@ -36,7 +36,6 @@ public class ClockScript : MonoBehaviour
         secHand.transform.rotation = Quaternion.Euler(0, 90,  _secTime * 6);
         minHand.transform.rotation = Quaternion.Euler(0, 90, _minTime * 6);
         hourHand.transform.rotation = Quaternion.Euler(0, 90, _hourTime * 30);
-        Debug.Log("CAMBIO A: " + _hourTime + " : " + _minTime + " : " + _secTime);
     }
 
 }

@@ -75,6 +75,7 @@ public class GordonController : MonoBehaviour
         }
     }
 
+    //Te lo cambio para que pase la lista entera en vez de un INT para asi poder eliminar los objetos que encuentre
     public void FindFoodOnFloor(int count)
     {
         for (var i = 0; i < count; i++)
@@ -83,8 +84,6 @@ public class GordonController : MonoBehaviour
         }
 
         PlaySound();
-
-        Debug.Log("Encontre comida en el suelo, que no vuelva a PASAAAARR");
     }
 
     public void PlaySound()

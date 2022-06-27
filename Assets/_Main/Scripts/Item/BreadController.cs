@@ -8,11 +8,8 @@ public class BreadController : MonoBehaviour
     [SerializeField] private GameObject breadToasted;
     [SerializeField] private GameObject breadBurned;
 
-    [Header("Sounds")]
-    [SerializeField] AudioSource source;
-    [SerializeField] AudioClip audioClip;
+    
 
-    private bool _audioPlay;
     private float _cookingTimer;
 
     private bool _isCooking;
@@ -22,7 +19,7 @@ public class BreadController : MonoBehaviour
     private void Start()
     {
         _objectFood = GetComponent<ObjectFood>();
-        _audioPlay = true;
+        
         _cookingTimer = timeCooking;
         switch (statusFood)
         {
@@ -58,16 +55,10 @@ public class BreadController : MonoBehaviour
         if (_isCooking)
         {
             _cookingTimer -= Time.deltaTime;
-            if(_audioPlay && statusFood != StatusFood.Burned)
-            {
-                source.PlayOneShot(audioClip);
-                _audioPlay = false;
-            }
+            
             if (_cookingTimer < 0)
             {
                 ChangeStateMeat();
-                _audioPlay = true;
-                Debug.Log("Entro a true");
                 _cookingTimer = timeCooking;
             }
         }
@@ -101,7 +92,6 @@ public class BreadController : MonoBehaviour
                 breadToasted.SetActive(false);
                 breadBurned.SetActive(true);
                 _objectFood.ChangeId(ObjectId.BreadBurned);
-                _audioPlay = false;
                 break;
             case StatusFood.Burned:
                 break;

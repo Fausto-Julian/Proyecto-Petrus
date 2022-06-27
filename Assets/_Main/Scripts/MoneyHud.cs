@@ -15,6 +15,6 @@ public class MoneyHud : MonoBehaviour
 
     private void Update()
     {
-        _text.text = $"Money: {GameManager.Instance.GetMoney()}";
+        _text.text = $"{GameManager.Instance.GetMoney()}";
     }
 }

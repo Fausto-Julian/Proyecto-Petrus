@@ -6,14 +6,20 @@ public class Spawner : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject objectPrefab;
     [SerializeField] private Transform spawnPosition;
+    private AudioSource audioSource;
 
     private bool _delay;
-    
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void Interact()
     {
         if (!_delay)
         {
             StartCoroutine(nameof(Instantiate));
+            audioSource.Play();
         }
         
     }
