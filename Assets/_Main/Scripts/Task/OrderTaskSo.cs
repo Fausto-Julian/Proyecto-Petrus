@@ -9,6 +9,16 @@ public enum DifficultyTask
     Hard
 }
 
+//[System.Serializable]
+//public enum CustomerRace
+//{
+//    Human,
+//    Minotaur,
+//    Elf,
+//    Ogre,
+//    Basurin
+//}
+
 [CreateAssetMenu(fileName = "TaskSO", menuName = "TaskSO", order = 0)]
 public class OrderTaskSo : ScriptableObject
 {

@@ -18,8 +18,6 @@ public class PlateController : MonoBehaviour
             var body = _food[i].GetComponent<Rigidbody>();
             body.useGravity = false;
             body.isKinematic = true;
-
-            Debug.Log("ES KINEMATICO");
         }
 
         yield return new WaitForSeconds(1f);
@@ -29,8 +27,6 @@ public class PlateController : MonoBehaviour
             var body = _food[i].GetComponent<Rigidbody>();
             body.useGravity = true;
             body.isKinematic = false;
-
-            Debug.Log("NO ES KINEMATICO");
         }
     }
 
@@ -42,7 +38,6 @@ public class PlateController : MonoBehaviour
             var body = food.gameObject.GetComponent<Rigidbody>();
             body.useGravity = false;
             body.isKinematic = true;
-            //--------
 
             _food.Add(food);
         }
@@ -71,7 +66,6 @@ public class PlateController : MonoBehaviour
     {
         if (_food.Count == 0 || _food[0] == null)
         {
-            Debug.Log("no hay comida");
             FindObjectOfType<GordonController>()?.PlaySound();
             return false;
         }
@@ -100,10 +94,8 @@ public class PlateController : MonoBehaviour
                 {
                     var idFood = _food[j].GetComponent<ObjectFood>().Id;
 
-                    Debug.Log(_orderTask.Ingredients[i]);
                     if (_orderTask.Ingredients[i] == idFood)
                     {
-                        Debug.Log($"Es true: Id food: {idFood} = {_orderTask.Ingredients[i]}");
                         completed = true;
                         break;
                     }
