@@ -6874,7 +6874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
       propertyPath: order.Array.size
-      value: 10
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
       propertyPath: order.Array.data[0]
@@ -6916,6 +6916,74 @@ PrefabInstance:
       propertyPath: order.Array.data[9]
       value: 
       objectReference: {fileID: 11400000, guid: 88860ca10b07aba4a9be090e0f6dd9bc, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fdbf3e632803be4fa2ab45c429ad829, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3151c2f7083d1324e9723a195add8ff3, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: d3ec391ba6177774f8dd335d664d9643, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: f91cefcd3aebd2e478949eed99fac5af, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: ba543dbf0050b6a438716a5d46682444, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: edeeb2ae65880bd43b97abb4b125ddda, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d5a51c45a1c41743b75d2b964e66360, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aef35e7ebae5ba4899a29c5eeb2c173, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: 089bebe52e2926946a73e9c8dc191153, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: 929f1ee3a42ed194baf3580259f4bcd7, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88a6d0e9d0e5bcd48ad757c78c4f791e, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[21]
+      value: 
+      objectReference: {fileID: 11400000, guid: 538db0a673c969842abe1b53076faced, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[22]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f58413c67c4c3840845bcdaa68d074f, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25a3d55dc557b3447bf58455e1732b9c, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[24]
+      value: 
+      objectReference: {fileID: 11400000, guid: 00dcce707c314eb40880dd51307cae7c, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[25]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e7a0a49792d3054490d75fa3b7651c1, type: 2}
+    - target: {fileID: 7264291777951105654, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
+      propertyPath: order.Array.data[26]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f1439aa220acf04aaee52d8aee93487, type: 2}
     - target: {fileID: 7264291777951105656, guid: 9a6e0b12d5aaaba4ebb9ac0e090469ef, type: 3}
       propertyPath: m_Name
       value: MesaEmplatado

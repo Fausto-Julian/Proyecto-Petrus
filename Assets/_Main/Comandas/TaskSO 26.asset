@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c13d8487044297a1cca7ef20ac0452, type: 3}
   m_Name: TaskSO 26
   m_EditorClassIdentifier: 
-  id: 0
-  difficultyTask: 0
-  orderMatters: 0
-  ingredients: 
-  imageOrder: {fileID: 0}
+  id: 25
+  difficultyTask: 2
+  orderMatters: 1
+  ingredients: 07000000030000000b0000000d00000007000000
+  imageOrder: {fileID: 21300000, guid: bc87f9d24af803d4da8c210aea19107d, type: 3}
