@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     private float _money;
+    private float _totalOrdersDelivered;
     private float _currentMoneyDaily;
     private bool _pause;
 
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _totalOrdersDelivered = 0;
         _currentMoneyDaily = startMoney;
         _money = startMoney;
 
@@ -79,6 +81,11 @@ public class GameManager : MonoBehaviour
         return _currentMoneyDaily;
     }
 
+    public float GetTotalOrdersDelivered()
+    {
+        return _totalOrdersDelivered;
+    }
+
     public void ResetDay()
     {
         _currentMoneyDaily = 0;
@@ -93,6 +100,7 @@ public class GameManager : MonoBehaviour
             if (plateController.DeliverTask())
             {
                 audioSource.Play();
+                _totalOrdersDelivered++;
                 AddMoney(20);
             }
             else

@@ -12,6 +12,8 @@ public class DailyManager : MonoBehaviour
     [Header("Reference")] 
     [SerializeField] private GameObject finishDayPanel;
     [SerializeField] private TextMeshProUGUI textMoney;
+    [SerializeField] private TextMeshProUGUI textTotalOrdersDelivered;
+    [SerializeField] private TextMeshProUGUI textSavingsMoney;
     [SerializeField] private Button nextDayButton;
 
     private int _day = 1;
@@ -32,7 +34,10 @@ public class DailyManager : MonoBehaviour
             ClockManager.Instance.SetTimeInHour(startHourDay);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
+
             textMoney.text = GameManager.Instance.GetMoneyDaily().ToString();
+            textTotalOrdersDelivered.text = GameManager.Instance.GetTotalOrdersDelivered().ToString();
+            textSavingsMoney.text = GameManager.Instance.GetMoney().ToString();
         }
     }
 
