@@ -56,9 +56,7 @@ MonoBehaviour:
   meatRaw: {fileID: 8534169128709294061}
   meatCooked: {fileID: 7526681549253123142}
   meatBurned: {fileID: 6479275874013568010}
-  cuttingPrefab: {fileID: 0}
-  source: {fileID: 0}
-  audioClip: {fileID: 0}
+  objectFood: {fileID: 5783419969258836749}
 --- !u!54 &1539082530374505847
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -101,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  name: Diced raw Meat
+  name: Diced Meat
   description: Can be cooked
 --- !u!1 &8567986883322405938
 GameObject:
@@ -168,6 +166,10 @@ PrefabInstance:
     - target: {fileID: 6002968998310157073, guid: 32e6426d324ec5942a32e840714a310c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002968998310157073, guid: 32e6426d324ec5942a32e840714a310c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6342480955298922923, guid: 32e6426d324ec5942a32e840714a310c, type: 3}
       propertyPath: m_RootOrder

@@ -9,8 +9,24 @@ public class PlateController : MonoBehaviour
     private OrderTaskSo _orderTask;
     private readonly List<GameObject> _food = new List<GameObject>();
     
-    public Sprite GetSprite => _orderTask.ImageOrder;
-    
+    public ClientState GetClientState => _orderTask.ClientState;
+
+    private float _time;
+
+
+    private void Update()
+    {
+        _time -= Time.deltaTime;
+        
+        if (_time <= _orderTask.ClientTimer * 0.6f && _time > _orderTask.ClientTimer * 0.3f)
+        {
+            _orderTask.ClientState = ClientState.Neutral;
+        }
+        else if (_time <= _orderTask.ClientTimer * 0.3f)
+        {
+            _orderTask.ClientState = ClientState.Angry;
+        }        
+    }
     public IEnumerator StaticFood()
     {
         for (var i = 0; i < _food.Count; i++)
@@ -60,6 +76,8 @@ public class PlateController : MonoBehaviour
     public void ImportTask(OrderTaskSo orderTask)
     {
         _orderTask = orderTask;
+        _orderTask.ClientState = ClientState.Happy;
+        _time = _orderTask.ClientTimer;
     }
 
     public bool DeliverTask()
@@ -116,6 +134,6 @@ public class PlateController : MonoBehaviour
 
     public void ActivateViewTask()
     {
-        HudManager.Instance.ActivateImageTask(_orderTask.ImageOrder);
+        HudManager.Instance.ActivateImageTask(_orderTask.ImageOrder, _orderTask.ImageClient);
     }
 }

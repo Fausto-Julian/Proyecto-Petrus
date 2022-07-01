@@ -100,8 +100,23 @@ public class GameManager : MonoBehaviour
             if (plateController.DeliverTask())
             {
                 audioSource.Play();
+
+                switch (plateController.GetClientState)
+                {
+                    case ClientState.Happy:
+                        AddMoney(20);
+                        break;
+                    case ClientState.Neutral:
+                        AddMoney(10);
+                        break;
+                    case ClientState.Angry:
+                        AddMoney(5);
+                        break;
+                    default:
+                        AddMoney(20);
+                        break;
+                }
                 _totalOrdersDelivered++;
-                AddMoney(20);
             }
             else
             {

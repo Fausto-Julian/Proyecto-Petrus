@@ -12,6 +12,7 @@ public class HudManager : MonoBehaviour
     [SerializeField] private Image imageTask;
     [SerializeField] private Image imagePickUp;
     [SerializeField] private Image imageInteract;
+    [SerializeField] private Image imageClientState;
 
     private bool _isActiveRadial;
     private float _timerIndicator;
@@ -36,6 +37,7 @@ public class HudManager : MonoBehaviour
         imageTask.gameObject.SetActive(false);
         imagePickUp.gameObject.SetActive(false);
         imageInteract.gameObject.SetActive(false);
+        imageClientState.gameObject.SetActive(false);
 
         _isActiveRadial = false;
     }
@@ -64,15 +66,19 @@ public class HudManager : MonoBehaviour
         _maxTime = maxTime;
     }
 
-    public void ActivateImageTask(Sprite sprite)
+    public void ActivateImageTask(Sprite spriteTask, Sprite clientSprite)
     {
-        imageTask.sprite = sprite;
+        imageTask.sprite = spriteTask;
+        imageClientState.sprite = clientSprite;
+
         imageTask.gameObject.SetActive(true);
+        imageClientState.gameObject.SetActive(true);
     }
 
     public void DeactivateImageTask()
     {
         imageTask.gameObject.SetActive(false);
+        imageClientState.gameObject.SetActive(false);
     }
     
     public void ActivateImagePickUp()
