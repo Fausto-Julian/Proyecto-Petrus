@@ -21,6 +21,8 @@ public class GordonController : MonoBehaviour
     private float _currentTimeShow;
 
     private bool _isShow;
+    private bool _isPlayingAudio;
+    private bool _isPlayingAudioAux;
     private bool _eventActive;
 
     private AudioSource _audioSource;
@@ -48,7 +50,13 @@ public class GordonController : MonoBehaviour
             if (_currentTimeShow <= 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, hideTransform.position, 0.01f);
-                
+
+
+                if (!_isPlayingAudio)
+                {
+                    _isPlayingAudioAux = true;
+                    _isPlayingAudio = true;
+                }
 
                 var distance = Vector3.Distance(transform.position, hideTransform.position);
 
@@ -56,6 +64,8 @@ public class GordonController : MonoBehaviour
                 {
                     _currentTimeShow = Random.Range(minTimerShow, maxTimerShow);
                     _isShow = false;
+                    _isPlayingAudio = false;
+                    _audioSource.Stop();
                 }
             }
         }
@@ -66,7 +76,12 @@ public class GordonController : MonoBehaviour
             if (_currentTimeHide <= 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, showTransform.position, 0.01f);
-                
+
+                if (!_isPlayingAudio)
+                {
+                    _isPlayingAudioAux = true;
+                    _isPlayingAudio = true;
+                }
 
                 var distance = Vector3.Distance(transform.position, showTransform.position);
 
@@ -75,12 +90,22 @@ public class GordonController : MonoBehaviour
                     OnShow.Invoke();
                     _currentTimeHide = Random.Range(minTimerHide, maxTimerHide);
                     _isShow = true;
+
+                    _isPlayingAudio = false;
+                    _audioSource.Stop();
                 }
             }
         }
 
 
-        
+        if(_isPlayingAudio)
+        {
+            if(_isPlayingAudioAux)
+            {
+                _audioSource.PlayOneShot(stepsSound);
+                _isPlayingAudioAux = false;
+            }
+        }
     }
 
     //Te lo cambio para que pase la lista entera en vez de un INT para asi poder eliminar los objetos que encuentre
