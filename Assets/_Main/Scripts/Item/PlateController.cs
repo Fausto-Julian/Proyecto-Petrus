@@ -84,7 +84,7 @@ public class PlateController : MonoBehaviour
     {
         if (_food.Count == 0 || _food[0] == null)
         {
-            FindObjectOfType<GordonController>()?.PlaySound();
+            FindObjectOfType<GordonController>()?.PlayErrorSound();
             return false;
         }
 
@@ -94,7 +94,7 @@ public class PlateController : MonoBehaviour
             {
                 if (_food[i].GetComponent<ObjectFood>().Id != _orderTask.Ingredients[i])
                 {
-                    FindObjectOfType<GordonController>()?.PlaySound();
+                    FindObjectOfType<GordonController>()?.PlayErrorSound();
                     return false;
                 }
             }
@@ -124,7 +124,7 @@ public class PlateController : MonoBehaviour
             }
             else
             {
-                FindObjectOfType<GordonController>()?.PlaySound();
+                FindObjectOfType<GordonController>()?.PlayErrorSound();
                 return false;
             }
         }

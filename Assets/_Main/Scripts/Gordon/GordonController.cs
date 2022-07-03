@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
@@ -13,6 +14,8 @@ public class GordonController : MonoBehaviour
     [SerializeField] private float maxTimerShow;
     [SerializeField] private Transform hideTransform;
     [SerializeField] private Transform showTransform;
+    [SerializeField] private AudioClip errorSound; 
+    [SerializeField] private AudioClip stepsSound; 
 
     private float _currentTimeHide;
     private float _currentTimeShow;
@@ -45,6 +48,7 @@ public class GordonController : MonoBehaviour
             if (_currentTimeShow <= 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, hideTransform.position, 0.01f);
+                
 
                 var distance = Vector3.Distance(transform.position, hideTransform.position);
 
@@ -62,6 +66,7 @@ public class GordonController : MonoBehaviour
             if (_currentTimeHide <= 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, showTransform.position, 0.01f);
+                
 
                 var distance = Vector3.Distance(transform.position, showTransform.position);
 
@@ -73,6 +78,9 @@ public class GordonController : MonoBehaviour
                 }
             }
         }
+
+
+        
     }
 
     //Te lo cambio para que pase la lista entera en vez de un INT para asi poder eliminar los objetos que encuentre
@@ -83,12 +91,17 @@ public class GordonController : MonoBehaviour
             GameManager.Instance.SubtractMoney(2f);
         }
 
-        PlaySound();
+        PlayErrorSound();
     }
 
-    public void PlaySound()
+    public void PlayErrorSound()
     {
-        _audioSource.Play();
+        //_audioSource.Play();
+        _audioSource.PlayOneShot(errorSound);
     }
-    
+
+    public void PlayStepsSound()
+    {
+        _audioSource.PlayOneShot(stepsSound);
+    }
 }
