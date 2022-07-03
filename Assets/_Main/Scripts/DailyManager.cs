@@ -14,6 +14,7 @@ public class DailyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMoney;
     [SerializeField] private TextMeshProUGUI textTotalOrdersDelivered;
     [SerializeField] private TextMeshProUGUI textSavingsMoney;
+    [SerializeField] private TextMeshProUGUI textTotalMoney;
     [SerializeField] private Button nextDayButton;
 
     private int _day = 1;
@@ -29,15 +30,24 @@ public class DailyManager : MonoBehaviour
     {
         if (ClockManager.Instance.GetTimeInHour() >= finishHourDay)
         {
-            GameManager.Instance.SetPause(true);
-            finishDayPanel.SetActive(true);
-            ClockManager.Instance.SetTimeInHour(startHourDay);
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0;
+            var totalMoney = GameManager.Instance.GetMoney() + GameManager.Instance.GetMoneyDaily();
+            if (totalMoney < 0)
+            {
+                GameManager.Instance.GameOver();
+            }
+            else
+            {
+                GameManager.Instance.SetPause(true);
+                finishDayPanel.SetActive(true);
+                ClockManager.Instance.SetTimeInHour(startHourDay);
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0;
 
-            textMoney.text = GameManager.Instance.GetMoneyDaily().ToString();
-            textTotalOrdersDelivered.text = GameManager.Instance.GetTotalOrdersDelivered().ToString();
-            textSavingsMoney.text = GameManager.Instance.GetMoney().ToString();
+                textMoney.text = GameManager.Instance.GetMoneyDaily().ToString();
+                textTotalOrdersDelivered.text = GameManager.Instance.GetTotalOrdersDelivered().ToString();
+                textSavingsMoney.text = GameManager.Instance.GetMoney().ToString();
+                textTotalMoney.text = totalMoney.ToString();
+            }
         }
     }
 
@@ -46,7 +56,7 @@ public class DailyManager : MonoBehaviour
         _day++;
         finishDayPanel.SetActive(false);
         GameManager.Instance.SetPause(false);
-        GameManager.Instance.ResetDay();
+        GameManager.Instance.NextDay();
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
     }

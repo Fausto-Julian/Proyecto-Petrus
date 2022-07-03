@@ -1,6 +1,7 @@
 ﻿
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _totalOrdersDelivered = 0;
-        _currentMoneyDaily = startMoney;
+        _currentMoneyDaily = 0;
         _money = startMoney;
 
         audioSource = GetComponent<AudioSource>();
@@ -44,30 +45,19 @@ public class GameManager : MonoBehaviour
         }
 
         _currentMoneyDaily += money;
-        _money += money;
     }
     
     public void SubtractMoney(float subtractMoney)
     {
         var newMoneyDaily = _currentMoneyDaily - subtractMoney;
-        var newMoney = _money - subtractMoney;
-        
-        if (newMoneyDaily < 0)
+
+        if (newMoneyDaily < -100)
         {
-            if (newMoney < 0)
-            {
-                _money = 0;
-            }
-            else
-            {
-                _money -= subtractMoney;
-            }
-            _currentMoneyDaily = 0;
+            GameOver();
         }
         else
         {
-            _currentMoneyDaily = newMoneyDaily;
-            _money = newMoney;
+            _currentMoneyDaily -= subtractMoney;
         }
     }
 
@@ -86,9 +76,16 @@ public class GameManager : MonoBehaviour
         return _totalOrdersDelivered;
     }
 
-    public void ResetDay()
+    public void NextDay()
     {
+        _money += _currentMoneyDaily;
         _currentMoneyDaily = 0;
+        _totalOrdersDelivered = 0;
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("DefeatScene");
     }
 
     public void DeliverTask(GameObject plate)
