@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         var newMoneyDaily = _currentMoneyDaily - subtractMoney;
 
-        if (newMoneyDaily < -100)
+        if (newMoneyDaily < -50)
         {
             GameOver();
         }
@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("DefeatScene");
     }
 
