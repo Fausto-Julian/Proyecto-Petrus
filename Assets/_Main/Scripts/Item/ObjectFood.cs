@@ -31,16 +31,6 @@ public class ObjectFood : MonoBehaviour
                 plateController.AddFood(gameObject);
             }
         }
-
-        if (Physics.Raycast(transform.position, Vector3.down, out var hitTabla, 20f, _plateLayerMask))
-        {
-            var tablaController = hit.transform.gameObject.GetComponent<TablaTransportadoraScript>();
-
-            if (tablaController != null)
-            {
-                tablaController.AddItemToStorage(gameObject);
-            }
-        }
     }
 
     public void ChangeId(ObjectId newId)
