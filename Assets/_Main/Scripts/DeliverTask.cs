@@ -7,7 +7,7 @@ public class DeliverTask : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Object"))
+        if (other.gameObject.CompareTag("Plate"))
         {
             var plate = other.gameObject.GetComponent<PlateController>();
             if (plate != null)

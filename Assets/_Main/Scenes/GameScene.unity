@@ -4521,6 +4521,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2305585903966526210, guid: 595e1c9a01d39d44098943796b6c6ce3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595e1c9a01d39d44098943796b6c6ce3, type: 3}
 --- !u!1001 &387292052
@@ -11079,7 +11083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874265715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.295, y: 1.058, z: -0.689}
+  m_LocalPosition: {x: 0.295, y: 1.02, z: -0.689}
   m_LocalScale: {x: 3.84, y: 2.16, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1706273606}
@@ -23478,7 +23482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHourDay: 19
-  finishHourDay: 21
+  finishHourDay: 20
   finishDayPanel: {fileID: 3154316667362411903}
   textMoney: {fileID: 1112668925}
   textTotalOrdersDelivered: {fileID: 523099675}
@@ -25720,7 +25724,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TablaTransportadora
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7679662424906535923, guid: ecff504ab34ce0d45bd5a809f30e82a3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ecff504ab34ce0d45bd5a809f30e82a3, type: 3}
 --- !u!1001 &1539653583287102519
 PrefabInstance:
