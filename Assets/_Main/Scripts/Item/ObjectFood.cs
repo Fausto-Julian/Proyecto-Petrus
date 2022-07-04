@@ -8,6 +8,7 @@ public class ObjectFood : MonoBehaviour
     [SerializeField, Multiline()] private string description;
 
     private LayerMask _plateLayerMask;
+    private LayerMask _tablaLayerMask;
 
     public ObjectId Id => id;
     public string Name => name;
@@ -16,6 +17,7 @@ public class ObjectFood : MonoBehaviour
     private void Start()
     {
         _plateLayerMask = LayerMask.GetMask("Plate");
+        _tablaLayerMask = LayerMask.GetMask("Tabla");
     }
 
     public void ShootRaycast()
@@ -27,6 +29,16 @@ public class ObjectFood : MonoBehaviour
             if (plateController != null)
             {
                 plateController.AddFood(gameObject);
+            }
+        }
+
+        if (Physics.Raycast(transform.position, Vector3.down, out var hitTabla, 20f, _plateLayerMask))
+        {
+            var tablaController = hit.transform.gameObject.GetComponent<TablaTransportadoraScript>();
+
+            if (tablaController != null)
+            {
+                tablaController.AddItemToStorage(gameObject);
             }
         }
     }

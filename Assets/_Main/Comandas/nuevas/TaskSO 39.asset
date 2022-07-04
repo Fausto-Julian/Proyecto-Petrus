@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c13d8487044297a1cca7ef20ac0452, type: 3}
+  m_Name: TaskSO 39
+  m_EditorClassIdentifier: 
+  id: 38
+  difficultyTask: 2
+  orderMatters: 0
+  ingredients: 0b0000000a000000100000000c0000000d000000
+  imageOrder: {fileID: 21300000, guid: 9a0aeece4c70e654f86984fe7bc71b2b, type: 3}
+  clientTimer: 150
+  clientState: 0
+  imageClientHappy: {fileID: 21300000, guid: f97ca81e51ae4914096e0732797a1d78, type: 3}
+  imageClientNeutral: {fileID: 21300000, guid: 090aa1f83884fea41aaff615df018303, type: 3}
+  imageClientAngry: {fileID: 21300000, guid: d8c8ece004707a74ea7b6fa21db2936f, type: 3}

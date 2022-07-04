@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45c13d8487044297a1cca7ef20ac0452, type: 3}
-  m_Name: TaskSO 33
+  m_Name: TaskSO 31
   m_EditorClassIdentifier: 
-  id: 32
+  id: 30
   difficultyTask: 2
   orderMatters: 0
-  ingredients: 070000000d0000000b00000007000000
-  imageOrder: {fileID: 21300000, guid: cbc7adb87d7e8034bb1d836b127c0a6c, type: 3}
+  ingredients: 07000000000000000d00000007000000
+  imageOrder: {fileID: 21300000, guid: 16243b2252c33c744a683774df872d96, type: 3}
   clientTimer: 150
   clientState: 0
-  imageClientHappy: {fileID: 21300000, guid: 19d0a893c265de04dbd0961b0462257b, type: 3}
-  imageClientNeutral: {fileID: 21300000, guid: cd5c1c3b58ea5c347b32b75b2b2f0c2b, type: 3}
-  imageClientAngry: {fileID: 21300000, guid: 13cefc9ec37319a4998c151b5a54d615, type: 3}
+  imageClientHappy: {fileID: 21300000, guid: f97ca81e51ae4914096e0732797a1d78, type: 3}
+  imageClientNeutral: {fileID: 21300000, guid: 090aa1f83884fea41aaff615df018303, type: 3}
+  imageClientAngry: {fileID: 21300000, guid: d8c8ece004707a74ea7b6fa21db2936f, type: 3}
