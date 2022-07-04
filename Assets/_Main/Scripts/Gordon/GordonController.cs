@@ -13,11 +13,15 @@ public class GordonController : MonoBehaviour
     [SerializeField] private float maxTimerShow;
     [SerializeField] private Transform hideTransform;
     [SerializeField] private Transform showTransform;
+    [SerializeField] private AudioClip errorSound;
+    [SerializeField] private AudioClip stepsSound;
 
     private float _currentTimeHide;
     private float _currentTimeShow;
 
     private bool _isShow;
+    private bool _isPlayingAudio;
+    private bool _isPlayingAudioAux;
     private bool _eventActive;
 
     private AudioSource _audioSource;
@@ -46,12 +50,22 @@ public class GordonController : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, hideTransform.position, 0.01f);
 
+
+
+                if (!_isPlayingAudio)
+                {
+                    _isPlayingAudioAux = true;
+                    _isPlayingAudio = true;
+                }
+
                 var distance = Vector3.Distance(transform.position, hideTransform.position);
 
                 if (distance < 0.1f)
                 {
                     _currentTimeShow = Random.Range(minTimerShow, maxTimerShow);
                     _isShow = false;
+                    _isPlayingAudio = false;
+                    _audioSource.Stop();
                 }
             }
         }
@@ -63,6 +77,13 @@ public class GordonController : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, showTransform.position, 0.01f);
 
+
+                if (!_isPlayingAudio)
+                {
+                    _isPlayingAudioAux = true;
+                    _isPlayingAudio = true;
+                }
+
                 var distance = Vector3.Distance(transform.position, showTransform.position);
 
                 if (distance < 0.1f)
@@ -70,7 +91,21 @@ public class GordonController : MonoBehaviour
                     OnShow.Invoke();
                     _currentTimeHide = Random.Range(minTimerHide, maxTimerHide);
                     _isShow = true;
+
+                    _isPlayingAudio = false;
+                    _audioSource.Stop();
                 }
+            }
+        }
+
+
+
+        if (_isPlayingAudio)
+        {
+            if (_isPlayingAudioAux)
+            {
+                _audioSource.PlayOneShot(stepsSound);
+                _isPlayingAudioAux = false;
             }
         }
     }
@@ -88,7 +123,7 @@ public class GordonController : MonoBehaviour
 
     public void PlaySound()
     {
-        _audioSource.Play();
+        _audioSource.PlayOneShot(errorSound);
     }
     
 }

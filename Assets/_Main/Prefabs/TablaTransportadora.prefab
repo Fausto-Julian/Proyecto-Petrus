@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6041539883657863921}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: ' Pos2'
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8524276654305883303}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Pos1
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678516732472715049}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Pos3
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -101,9 +101,11 @@ GameObject:
   - component: {fileID: 3341896140499389123}
   - component: {fileID: 2759245502280805978}
   - component: {fileID: 817365164202059734}
-  m_Layer: 9
+  - component: {fileID: 1564180759}
+  - component: {fileID: 1564180758}
+  m_Layer: 7
   m_Name: TablaTransportadora
-  m_TagString: Object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +157,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1564180759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597243230228274513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50844646, y: 0.09079611, z: 0.8390515}
+  m_Center: {x: 0.0044597387, y: 0.040850103, z: 0.004720688}
+--- !u!114 &1564180758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597243230228274513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1730bd64d958247bc34760ff5c5f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storagePositions:
+  - {fileID: 8524276654305883303}
+  - {fileID: 6041539883657863921}
+  - {fileID: 678516732472715049}
 --- !u!1001 &808380179890932640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c99ef393d6f9deb44b21ffb17079cf77, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c99ef393d6f9deb44b21ffb17079cf77, type: 3}
       propertyPath: m_TagString

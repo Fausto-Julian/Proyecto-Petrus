@@ -8,50 +8,56 @@ public class TablaTransportadoraScript : MonoBehaviour
     //[SerializeField] Transform storagePosition_Two;
     //[SerializeField] Transform storagePosition_Three;
 
-    //private LayerMask tablaMask;
-    //private List<GameObject> _storedItems;
+    [SerializeField] private Transform[] storagePositions;
 
-    //private void Awake()
-    //{
-    //    tablaMask = LayerMask.GetMask("Tabla");
-    //}
+    private LayerMask tablaMask;
+    private GameObject[] _storedItems = new GameObject[3];
 
-    //private void Update()
-    //{
-    //    if(_storedItems.Count > 0)
-    //    {
-    //        for (int i = 0; i < 2; i++)
-    //        {
-                
-    //        }
-    //    }
-    //}
+    private void Awake()
+    {
+        tablaMask = LayerMask.GetMask("Tabla");
+    }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Object"))
-    //    {
-            
-            
-    //        other.gameObject.transform.SetParent(transform);
-    //        var body = gameObject.gameObject.GetComponent<Rigidbody>();
-    //        body.useGravity = false;
-    //        body.isKinematic = true;
+    private void Start()
+    {
+        for (int i = 0; i < _storedItems.Length; i++)
+        {
+            _storedItems[i] = null;
+        }
+    }
 
-    //        _storedItems.Add(gameObject);
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Object"))
+        {
+            for (int i = 0; i < _storedItems.Length; i++)
+            {
+                if(_storedItems[i] == null)
+                {
+                    other.gameObject.transform.position = storagePositions[i].position;
 
-    //public void AddItemToStorage(GameObject gameObject)
-    //{
-    //    if (gameObject.CompareTag("Object"))
-    //    {
-    //        gameObject.transform.SetParent(transform);
-    //        var body = gameObject.gameObject.GetComponent<Rigidbody>();
-    //        body.useGravity = false;
-    //        body.isKinematic = true;
+                    other.gameObject.transform.SetParent(transform);
+                    var body = gameObject.gameObject.GetComponent<Rigidbody>();
+                    body.useGravity = false;
+                    body.isKinematic = true;
 
-    //        _storedItems.Add(gameObject);
-    //    }
-    //}
+                    _storedItems[i] = other.gameObject;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Object"))
+        {
+            for (int i = 0; i < _storedItems.Length; i++)
+            {
+                if (_storedItems[i] == other.gameObject)
+                {
+                    _storedItems[i] = null;
+                }
+            }
+        }
+    }
 }
