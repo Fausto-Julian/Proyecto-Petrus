@@ -103,6 +103,8 @@ GameObject:
   - component: {fileID: 817365164202059734}
   - component: {fileID: 1564180759}
   - component: {fileID: 1564180758}
+  - component: {fileID: 8426368242189328850}
+  - component: {fileID: 7679662424906535923}
   m_Layer: 7
   m_Name: TablaTransportadora
   m_TagString: Untagged
@@ -171,6 +173,35 @@ BoxCollider:
   m_Size: {x: 0.50844646, y: 0.09079611, z: 0.8390515}
   m_Center: {x: 0.0044597387, y: 0.040850103, z: 0.004720688}
 --- !u!114 &1564180758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597243230228274513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1730bd64d958247bc34760ff5c5f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storagePositions:
+  - {fileID: 8524276654305883303}
+  - {fileID: 6041539883657863921}
+  - {fileID: 678516732472715049}
+--- !u!65 &8426368242189328850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597243230228274513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50844646, y: 0.2514665, z: 0.8390515}
+  m_Center: {x: 0.0044597387, y: 0.1211853, z: 0.004720688}
+--- !u!114 &7679662424906535923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
