@@ -450,6 +450,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaCan (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95210351337126e488901be9515850f3, type: 3}
 --- !u!4 &55393714 stripped
@@ -519,6 +527,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
       propertyPath: m_Name
       value: loafRound (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
@@ -1120,6 +1136,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: loafRound
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
 --- !u!4 &115046196 stripped
@@ -1181,6 +1205,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
       propertyPath: m_Name
       value: wineRed (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
@@ -2439,6 +2471,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!208 &212443199
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212443194}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &230855379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2637,6 +2685,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
       propertyPath: m_Name
       value: wineRed (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
@@ -3148,8 +3204,8 @@ GameObject:
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &255560651
 BoxCollider:
@@ -3386,8 +3442,8 @@ GameObject:
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &329701616
 BoxCollider:
@@ -3995,6 +4051,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
       propertyPath: m_Name
       value: barrel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
@@ -5020,8 +5084,8 @@ GameObject:
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &437502626
 BoxCollider:
@@ -5224,6 +5288,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineWhite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
 --- !u!4 &443764745 stripped
@@ -5298,6 +5370,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
       propertyPath: m_Name
       value: loafRound (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
@@ -5385,6 +5465,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
 --- !u!1001 &492591647
@@ -5441,6 +5529,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
       propertyPath: m_Name
       value: wineWhite (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
@@ -6003,6 +6099,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaBottle (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
 --- !u!4 &517238501 stripped
@@ -6080,6 +6184,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
       propertyPath: m_Name
       value: wineRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
@@ -7057,6 +7169,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: loafRound (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
 --- !u!4 &599880517 stripped
@@ -7118,6 +7238,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
       propertyPath: m_Name
       value: wineWhite
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
@@ -7375,6 +7503,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaBottle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
 --- !u!4 &606023241 stripped
@@ -7531,6 +7667,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
       propertyPath: m_Name
       value: sodaBottle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
@@ -8196,8 +8340,8 @@ GameObject:
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &726048350
 BoxCollider:
@@ -8553,6 +8697,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineRed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
 --- !u!4 &750168817 stripped
@@ -8644,6 +8796,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
 --- !u!4 &751398124 stripped
@@ -8723,6 +8883,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
       propertyPath: m_Name
       value: sodaBottle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
@@ -10799,6 +10967,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: loafRound (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
 --- !u!4 &869905465 stripped
@@ -11025,6 +11201,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
       propertyPath: m_Name
       value: sodaBottle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
@@ -11578,6 +11762,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaCan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95210351337126e488901be9515850f3, type: 3}
 --- !u!4 &967524247 stripped
@@ -11606,8 +11798,8 @@ GameObject:
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &968802646
 BoxCollider:
@@ -11770,6 +11962,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineRed (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
 --- !u!4 &984888336 stripped
@@ -11863,8 +12063,8 @@ GameObject:
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &992532078
 BoxCollider:
@@ -11996,6 +12196,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
       propertyPath: m_Name
       value: wineWhite (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
@@ -13840,6 +14048,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaCan (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95210351337126e488901be9515850f3, type: 3}
 --- !u!4 &1175401628 stripped
@@ -13939,6 +14155,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7f16753a3e58a6d439b32fb0b8c6ce6a, type: 3}
       propertyPath: m_Name
       value: canSmall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7f16753a3e58a6d439b32fb0b8c6ce6a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7f16753a3e58a6d439b32fb0b8c6ce6a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f16753a3e58a6d439b32fb0b8c6ce6a, type: 3}
@@ -14584,6 +14808,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaCan (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95210351337126e488901be9515850f3, type: 3}
 --- !u!4 &1247472439 stripped
@@ -14653,6 +14885,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
       propertyPath: m_Name
       value: loafRound (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87a69e37ea7554780c061c730efe96, type: 3}
@@ -16810,6 +17050,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineWhite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
 --- !u!4 &1397854282 stripped
@@ -17167,6 +17415,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
       propertyPath: m_Name
       value: barrel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
@@ -17660,6 +17916,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
       propertyPath: m_Name
       value: loafBaguette
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
@@ -18458,6 +18722,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineWhite (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880d1c84414543b42879c75f0c368dbe, type: 3}
 --- !u!4 &1509104627 stripped
@@ -18543,6 +18815,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
       propertyPath: m_Name
       value: barrel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
@@ -19113,6 +19393,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaCan
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95210351337126e488901be9515850f3, type: 3}
 --- !u!4 &1557962814 stripped
@@ -19245,6 +19533,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineRed (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbed75598fc1b48a6e4ed874469b32, type: 3}
 --- !u!4 &1573568251 stripped
@@ -19330,6 +19626,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
       propertyPath: m_Name
       value: barrel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a82b19965d098408dc5020b7ed8274, type: 3}
@@ -19480,6 +19784,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
       propertyPath: m_Name
       value: loafBaguette (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
@@ -21660,6 +21972,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaBottle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
 --- !u!4 &1793523212 stripped
@@ -22047,6 +22367,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
       propertyPath: m_Name
       value: loafBaguette (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa196f5eb1ae0b4a9ea066358d723f9, type: 3}
@@ -22638,6 +22966,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaBottle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
 --- !u!4 &1895055538 stripped
@@ -22938,8 +23274,8 @@ GameObject:
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1970029227
 BoxCollider:
@@ -23990,6 +24326,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sodaCan (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95210351337126e488901be9515850f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95210351337126e488901be9515850f3, type: 3}
 --- !u!4 &2040948517 stripped
@@ -24117,6 +24461,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
       propertyPath: m_Name
       value: sodaBottle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
@@ -24529,8 +24881,8 @@ GameObject:
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &2090639380
 BoxCollider:
@@ -25008,6 +25360,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
       propertyPath: m_Name
       value: sodaBottle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c475de283600549916d58bb3c7af5e, type: 3}
@@ -25598,6 +25958,10 @@ PrefabInstance:
     - target: {fileID: 6088807671446426301, guid: 40074294228ce5047b58ec058558dafa, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 163.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677843613509957199, guid: 40074294228ce5047b58ec058558dafa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40074294228ce5047b58ec058558dafa, type: 3}
