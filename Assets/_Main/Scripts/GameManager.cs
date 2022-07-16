@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float startMoney;
     [SerializeField] private OrderTaskTable orderTaskTable;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private ParticleSystem goodParticles;
 
     private float _money;
     private float _totalOrdersDelivered;
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("DefeatScene");
     }
 
+    
     public void DeliverTask(GameObject plate)
     {
         var plateController = plate.GetComponent<PlateController>();
@@ -98,6 +100,7 @@ public class GameManager : MonoBehaviour
             if (plateController.DeliverTask())
             {
                 audioSource.Play();
+                goodParticles.Play();
 
                 switch (plateController.GetClientState)
                 {

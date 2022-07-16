@@ -25,7 +25,14 @@ public class PlateController : MonoBehaviour
         else if (_time <= _orderTask.ClientTimer * 0.3f)
         {
             _orderTask.ClientState = ClientState.Angry;
-        }        
+        }
+        else if(_time < 0)
+        {
+            //El plato deberia desaparecer
+            //restarle como si lo hubiera entregado mal
+            //y reponer con un nuevo plato
+            
+        }
     }
     public IEnumerator StaticFood()
     {
