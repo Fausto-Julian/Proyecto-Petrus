@@ -18,37 +18,8 @@ public class PlateController : MonoBehaviour
         _orderTask.ClientState = ClientState.Happy;
         yield return new WaitForSeconds(_orderTask.ClientTimer);
         
-<<<<<<< Updated upstream
-        if (_time <= _orderTask.ClientTimer * 0.6f && _time > _orderTask.ClientTimer * 0.3f)
-        {
-            _orderTask.ClientState = ClientState.Neutral;
-        }
-        else if (_time <= _orderTask.ClientTimer * 0.3f)
-        {
-            _orderTask.ClientState = ClientState.Angry;
-        }
-        else if(_time < 0)
-        {
-            //El plato deberia desaparecer
-            //restarle como si lo hubiera entregado mal
-            //y reponer con un nuevo plato
-            
-        }
-    }
-    public IEnumerator StaticFood()
-    {
-        for (var i = 0; i < _food.Count; i++)
-        {
-            var body = _food[i].GetComponent<Rigidbody>();
-            body.useGravity = false;
-            body.isKinematic = true;
-        }
-
-        yield return new WaitForSeconds(1f);
-=======
         _orderTask.ClientState = ClientState.Neutral;
         yield return new WaitForSeconds(_orderTask.ClientTimer);
->>>>>>> Stashed changes
         
         _orderTask.ClientState = ClientState.Angry;
         yield return new WaitForSeconds(_orderTask.ClientTimer);
