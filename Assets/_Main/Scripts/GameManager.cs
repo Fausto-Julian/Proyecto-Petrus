@@ -130,6 +130,13 @@ public class GameManager : MonoBehaviour
         orderTaskTable.AddTask();
     }
 
+    public void ChangePlate(GameObject plate)
+    {
+        orderTaskTable.RemoveTask(plate);
+        Destroy(plate);
+        orderTaskTable.AddTask();
+    }
+
     public void SetPause(bool isPause)
     {
         _pause = isPause;

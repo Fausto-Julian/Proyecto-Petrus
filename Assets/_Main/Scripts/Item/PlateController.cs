@@ -13,11 +13,12 @@ public class PlateController : MonoBehaviour
 
     private float _time;
 
-
-    private void Update()
+    private IEnumerator StateLife()
     {
-        _time -= Time.deltaTime;
+        _orderTask.ClientState = ClientState.Happy;
+        yield return new WaitForSeconds(_orderTask.ClientTimer);
         
+<<<<<<< Updated upstream
         if (_time <= _orderTask.ClientTimer * 0.6f && _time > _orderTask.ClientTimer * 0.3f)
         {
             _orderTask.ClientState = ClientState.Neutral;
@@ -44,13 +45,17 @@ public class PlateController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
+=======
+        _orderTask.ClientState = ClientState.Neutral;
+        yield return new WaitForSeconds(_orderTask.ClientTimer);
+>>>>>>> Stashed changes
         
-        for (var i = 0; i < _food.Count; i++)
-        {
-            var body = _food[i].GetComponent<Rigidbody>();
-            body.useGravity = true;
-            body.isKinematic = false;
-        }
+        _orderTask.ClientState = ClientState.Angry;
+        yield return new WaitForSeconds(_orderTask.ClientTimer);
+        
+        FindObjectOfType<GordonController>()?.PlaySound();
+        GameManager.Instance.SubtractMoney(10);
+        GameManager.Instance.ChangePlate(gameObject);
     }
 
     public void AddFood(GameObject food)
@@ -70,8 +75,6 @@ public class PlateController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Object"))
         {
-            
-
             other.transform.SetParent(null);
             if (_food.Contains(other.gameObject))
             {
@@ -83,8 +86,8 @@ public class PlateController : MonoBehaviour
     public void ImportTask(OrderTaskSo orderTask)
     {
         _orderTask = orderTask;
-        _orderTask.ClientState = ClientState.Happy;
         _time = _orderTask.ClientTimer;
+        StartCoroutine(nameof(StateLife));
     }
 
     public bool DeliverTask()
@@ -142,5 +145,10 @@ public class PlateController : MonoBehaviour
     public void ActivateViewTask()
     {
         HudManager.Instance.ActivateImageTask(_orderTask.ImageOrder, _orderTask.ImageClient);
+    }
+
+    public void RemoveObjectsInFloor()
+    {
+        FindObjectOfType<GarbageFloor>()?.RemoveObjectsDrops(_food);
     }
 }

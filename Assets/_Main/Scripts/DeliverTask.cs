@@ -12,6 +12,7 @@ public class DeliverTask : MonoBehaviour
             var plate = other.gameObject.GetComponent<PlateController>();
             if (plate != null)
             {
+                plate.RemoveObjectsInFloor();
                 GameManager.Instance.DeliverTask(other.gameObject);
             }
         }

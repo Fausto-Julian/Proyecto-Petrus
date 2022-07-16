@@ -37,4 +37,15 @@ public class GarbageFloor : MonoBehaviour
             gordonController.FindFoodOnFloor(ObjectDrops.Count);
         }
     }
+
+    public void RemoveObjectsDrops(List<GameObject> objects)
+    {
+        for (var i = 0; i < objects.Count; i++)
+        {
+            if (ObjectDrops.Contains(objects[i]))
+            {
+                ObjectDrops.Remove(objects[i]);
+            }
+        }
+    }
 }
