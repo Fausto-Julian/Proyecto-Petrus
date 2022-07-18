@@ -20,7 +20,8 @@ public class OrderTaskTable : MonoBehaviour
         {
             _plates[i] = new Plate
             {
-                Transform = spawnsPlates[i]
+                Transform = spawnsPlates[i],
+                IsAvailable = false
             };
         }
     }
@@ -36,14 +37,22 @@ public class OrderTaskTable : MonoBehaviour
     {
         for (var i = 0; i < _plates.Length; i++)
         {
-            if (_plates[i].Item == null)
+            if (GameManager.Instance.GetProgressLevels().MoreClientsLevel == (i + 1))
             {
-                var task = _orderTaskManager.GetTaskRandom();
-                _plates[i].Item =
-                    Instantiate(prefabPlate, _plates[i].Transform.position, _plates[i].Transform.rotation);
-                var plateController = _plates[i].Item.GetComponent<PlateController>();
+                _plates[i].IsAvailable = true;
+            }
+            
+            if (_plates[i].IsAvailable)
+            {
+                if (_plates[i].Item == null)
+                {
+                    var task = _orderTaskManager.GetTaskRandom();
+                    _plates[i].Item =
+                        Instantiate(prefabPlate, _plates[i].Transform.position, _plates[i].Transform.rotation);
+                    var plateController = _plates[i].Item.GetComponent<PlateController>();
                 
-                plateController.ImportTask(task);
+                    plateController.ImportTask(task);
+                }
             }
         }
     }
@@ -62,6 +71,7 @@ public class OrderTaskTable : MonoBehaviour
 
 class Plate
 {
+    public bool IsAvailable;
     public GameObject Item;
     public Transform Transform;
 }

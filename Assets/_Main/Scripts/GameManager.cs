@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private float startMoney;
+    [SerializeField] private ProgressLevelsSo progressLevelsSo;
     [SerializeField] private OrderTaskTable orderTaskTable;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ParticleSystem goodParticles;
@@ -38,6 +38,17 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            _money = 10000;
+            _currentMoneyDaily += 50;
+        }
+    }
+
+    public ProgressLevelsSo GetProgressLevels() => progressLevelsSo;
+
     public void AddMoney(float money)
     {
         if (money < 0)
@@ -48,7 +59,7 @@ public class GameManager : MonoBehaviour
         _currentMoneyDaily += money;
     }
     
-    public void SubtractMoney(float subtractMoney)
+    public void SubtractMoneyDaily(float subtractMoney)
     {
         var newMoneyDaily = _currentMoneyDaily - subtractMoney;
 
@@ -60,6 +71,21 @@ public class GameManager : MonoBehaviour
         {
             _currentMoneyDaily -= subtractMoney;
         }
+    }
+
+    public void SubtractMoney(float subtractMoney)
+    {
+        var newMoneyDaily = _money - subtractMoney;
+
+        if (newMoneyDaily >= 0)
+        {
+            _money -= subtractMoney;
+        }
+    }
+
+    public bool EnoughMoney(float price)
+    {
+        return _money >= price;
     }
 
     public float GetMoney()
@@ -121,7 +147,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                SubtractMoney(10);
+                SubtractMoneyDaily(10);
             }
         }
 

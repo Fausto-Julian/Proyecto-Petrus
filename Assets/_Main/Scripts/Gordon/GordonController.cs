@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -115,7 +113,7 @@ public class GordonController : MonoBehaviour
     {
         for (var i = 0; i < count; i++)
         {
-            GameManager.Instance.SubtractMoney(2f);
+            GameManager.Instance.SubtractMoneyDaily(2f);
         }
 
         PlaySound();

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum StatusFood
@@ -30,8 +27,7 @@ public class MeatController : MonoBehaviour
 
     private void Start()
     {
-
-        _cookingTimer = timeCooking;
+        _cookingTimer = timeCooking / GameManager.Instance.GetProgressLevels().KitchenSpeedLevel;
         switch (statusFood)
         {
             case StatusFood.Raw:
@@ -83,13 +79,11 @@ public class MeatController : MonoBehaviour
         if (_isCooking)
         {
             _cookingTimer -= Time.deltaTime;
-
             
-
             if (_cookingTimer < 0)
             {
                 ChangeStateMeat();
-                _cookingTimer = timeCooking;
+                _cookingTimer = timeCooking / GameManager.Instance.GetProgressLevels().KitchenSpeedLevel;
             }
             //cockingParticle.Play();
         }

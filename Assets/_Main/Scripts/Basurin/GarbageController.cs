@@ -17,7 +17,12 @@ public class GarbageController : MonoBehaviour
 
     private void Update()
     {
-        _navMeshAgent.destination = garbageFloor.ObjectDrops.Count > 0 ? garbageFloor.ObjectDrops[0].transform.position : startPosition.position;
+        if (GameManager.Instance.GetProgressLevels().BasurinLevel > 1)
+        {
+            _navMeshAgent.destination = garbageFloor.ObjectDrops.Count > 0 ? garbageFloor.ObjectDrops[0].transform.position : startPosition.position;
+        }
+
+        _navMeshAgent.speed = GameManager.Instance.GetProgressLevels().BasurinLevel;
     }
 
     private void OnTriggerStay(Collider other)

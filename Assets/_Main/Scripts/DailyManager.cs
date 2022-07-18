@@ -1,6 +1,4 @@
-﻿
-using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,6 +45,7 @@ public class DailyManager : MonoBehaviour
                 textTotalOrdersDelivered.text = GameManager.Instance.GetTotalOrdersDelivered().ToString();
                 textSavingsMoney.text = GameManager.Instance.GetMoney().ToString();
                 textTotalMoney.text = totalMoney.ToString();
+                GameManager.Instance.NextDay();
             }
         }
     }
@@ -56,7 +55,6 @@ public class DailyManager : MonoBehaviour
         _day++;
         finishDayPanel.SetActive(false);
         GameManager.Instance.SetPause(false);
-        GameManager.Instance.NextDay();
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
     }

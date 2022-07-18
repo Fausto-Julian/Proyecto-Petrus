@@ -43,7 +43,7 @@ public class CuttingBoardScript : MonoBehaviour, IInteractable
     {
         if(objects.Count > 0)
         {
-            HudManager.Instance.ActiveImageRadial(_timer, 2f);
+            HudManager.Instance.ActiveImageRadial(_timer, GameManager.Instance.GetProgressLevels().SharpenKnifeLevel);
             
             if(_timer > 0f && _audioPlayOnce)
             {
@@ -51,8 +51,10 @@ public class CuttingBoardScript : MonoBehaviour, IInteractable
                 //y se hace false cuando se reproduce
                 _audioPlayOnce = false;
             }
-             _timer += Time.deltaTime;
-            if(_timer > 2f)
+            
+            _timer += Time.deltaTime;
+             
+            if(_timer > GameManager.Instance.GetProgressLevels().SharpenKnifeLevel)
             {
                 poofParticle.Play();
 

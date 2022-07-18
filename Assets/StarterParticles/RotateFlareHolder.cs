@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RotateFlareHolder : MonoBehaviour {
 	// THIS SCRIPT SIMPLY ROTATES THE GAME OBJECT HOLDING THE LENS FLARE SCRIPT SO THAT

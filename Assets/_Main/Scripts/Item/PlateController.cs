@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +23,7 @@ public class PlateController : MonoBehaviour
         yield return new WaitForSeconds(_orderTask.ClientTimer);
         
         FindObjectOfType<GordonController>()?.PlaySound();
-        GameManager.Instance.SubtractMoney(10);
+        GameManager.Instance.SubtractMoneyDaily(10);
         GameManager.Instance.ChangePlate(gameObject);
     }
 
