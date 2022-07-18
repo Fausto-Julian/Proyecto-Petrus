@@ -3,33 +3,38 @@
 [CreateAssetMenu(fileName = "ProgressLevelsSo", menuName = "ProgressLevels", order = 0)]
 public class ProgressLevelsSo : ScriptableObject
 {
+
+    [Header("Price Level 1")]
     [SerializeField] private float kitchenBellLevel1Price;
     [SerializeField] private float moreClientsLevel1Price;
     [SerializeField] private float kitchenSpeedLevel1Price;
     [SerializeField] private float sharpenKnifeLevel1Price;
     [SerializeField] private float basurinLevel1Price;
     [SerializeField] private float fortuneLevel1Price;
-    
+
+    [Header("Price Level 2")]
     [SerializeField] private float kitchenBellLevel2Price;
     [SerializeField] private float moreClientsLevel2Price;
     [SerializeField] private float kitchenSpeedLevel2Price;
     [SerializeField] private float sharpenKnifeLevel2Price;
     [SerializeField] private float basurinLevel2Price;
     [SerializeField] private float fortuneLevel2Price;
-    
+
+    [Header("Price Level 3")]
     [SerializeField] private float kitchenBellLevel3Price;
     [SerializeField] private float moreClientsLevel3Price;
     [SerializeField] private float kitchenSpeedLevel3Price;
     [SerializeField] private float sharpenKnifeLevel3Price;
     [SerializeField] private float basurinLevel3Price;
     [SerializeField] private float fortuneLevel3Price;
-    
-    [SerializeField] public int KitchenBellLevel { get; set; } = 1;
-    [SerializeField] public int MoreClientsLevel { get; set; } = 1;
-    [SerializeField] public int KitchenSpeedLevel { get; set; } = 1;
-    [SerializeField] public int SharpenKnifeLevel { get; set; } = 3;
-    [SerializeField] public int BasurinLevel { get; set; } = 1;
-    [SerializeField] public int FortuneLevel { get; set; } = 1;
+
+    [Header("Levels")]
+    [SerializeField] public int KitchenBellLevel = 1;
+    [SerializeField] public int MoreClientsLevel = 1;
+    [SerializeField] public int KitchenSpeedLevel = 1;
+    [SerializeField] public int SharpenKnifeLevel = 3;
+    [SerializeField] public int BasurinLevel = 1;
+    [SerializeField] public int FortuneLevel = 1;
 
     public float KitchenBellLevelPrice
     {

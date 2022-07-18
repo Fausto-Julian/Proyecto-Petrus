@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a8d77b5cb748a88d0053dc88a08bb9, type: 3}
   m_Name: ProgressLevelsSo
   m_EditorClassIdentifier: 
-  kitchenBellLevel1Price: 0
-  moreClientsLevel1Price: 0
-  kitchenSpeedLevel1Price: 0
-  sharpenKnifeLevel1Price: 0
-  basurinLevel1Price: 0
-  fortuneLevel1Price: 0
-  kitchenBellLevel2Price: 0
-  moreClientsLevel2Price: 0
-  kitchenSpeedLevel2Price: 0
-  sharpenKnifeLevel2Price: 0
-  basurinLevel2Price: 0
-  fortuneLevel2Price: 0
-  kitchenBellLevel3Price: 0
-  moreClientsLevel3Price: 0
-  kitchenSpeedLevel3Price: 0
-  sharpenKnifeLevel3Price: 0
-  basurinLevel3Price: 0
-  fortuneLevel3Price: 0
+  kitchenBellLevel1Price: 50
+  moreClientsLevel1Price: 50
+  kitchenSpeedLevel1Price: 50
+  sharpenKnifeLevel1Price: 50
+  basurinLevel1Price: 50
+  fortuneLevel1Price: 50
+  kitchenBellLevel2Price: 50
+  moreClientsLevel2Price: 50
+  kitchenSpeedLevel2Price: 50
+  sharpenKnifeLevel2Price: 50
+  basurinLevel2Price: 50
+  fortuneLevel2Price: 50
+  kitchenBellLevel3Price: 50
+  moreClientsLevel3Price: 50
+  kitchenSpeedLevel3Price: 50
+  sharpenKnifeLevel3Price: 50
+  basurinLevel3Price: 50
+  fortuneLevel3Price: 50
