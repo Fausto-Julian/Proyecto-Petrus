@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private OrderTaskTable orderTaskTable;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ParticleSystem goodParticles;
+    [SerializeField] private GameObject prefabPlayer;
 
     private float _money;
     private float _totalOrdersDelivered;
@@ -163,6 +164,10 @@ public class GameManager : MonoBehaviour
         orderTaskTable.AddTask();
     }
 
+    public void RemoveAllPlate()
+    {
+        orderTaskTable.RemoveAllPlate();
+    }
     public void SetPause(bool isPause)
     {
         _pause = isPause;
@@ -171,5 +176,19 @@ public class GameManager : MonoBehaviour
     public bool GetPause()
     {
         return _pause;
+    }
+
+    public void ResetGame()
+    {
+        FindObjectOfType<GarbageFloor>()?.DestroyAll();
+        Destroy(FindObjectOfType<PlayerController>().gameObject);
+        Instantiate(prefabPlayer, prefabPlayer.transform.position, prefabPlayer.transform.rotation);
+        var objecs = FindObjectsOfType<ObjectFood>();
+        
+        for (int i = objecs.Length - 1; i >= 0; i--)
+        {
+            Destroy(objecs[i].gameObject);
+        }
+        orderTaskTable.AddTask();
     }
 }

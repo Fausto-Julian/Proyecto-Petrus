@@ -6,7 +6,7 @@ public class GarbageFloor : MonoBehaviour
 {
     [SerializeField] private GordonController gordonController;
     
-    public List<GameObject> ObjectDrops { get; } = new List<GameObject>();
+    public List<GameObject> ObjectDrops { get; private set; } = new List<GameObject>();
 
     private void Start()
     {
@@ -45,6 +45,19 @@ public class GarbageFloor : MonoBehaviour
             {
                 ObjectDrops.Remove(objects[i]);
             }
+        }
+    }
+
+    public void DestroyAll()
+    {
+        if(ObjectDrops.Count > 0)
+        {
+            for (var i = ObjectDrops.Count -1; i < 0; i--)
+            {
+                Destroy(ObjectDrops[i]);
+            }
+            ObjectDrops.Clear();
+            ObjectDrops = new List<GameObject>();
         }
     }
 }

@@ -15,7 +15,15 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = targetFollow.position;
-        transform.rotation = targetFollow.rotation;
+        try
+        {
+            transform.position = targetFollow.position;
+            transform.rotation = targetFollow.rotation;
+
+        }
+        catch
+        {
+            targetFollow = GameObject.FindGameObjectWithTag("SpawnPointPlayer").transform;
+        }
     }
 }

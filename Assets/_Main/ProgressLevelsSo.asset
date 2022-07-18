@@ -30,3 +30,9 @@ MonoBehaviour:
   sharpenKnifeLevel3Price: 50
   basurinLevel3Price: 50
   fortuneLevel3Price: 50
+  KitchenBellLevel: 1
+  MoreClientsLevel: 3
+  KitchenSpeedLevel: 1
+  SharpenKnifeLevel: 3
+  BasurinLevel: 1
+  FortuneLevel: 2

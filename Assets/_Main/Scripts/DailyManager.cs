@@ -46,6 +46,8 @@ public class DailyManager : MonoBehaviour
                 textSavingsMoney.text = GameManager.Instance.GetMoney().ToString();
                 textTotalMoney.text = totalMoney.ToString();
                 GameManager.Instance.NextDay();
+                GameManager.Instance.RemoveAllPlate();
+                
             }
         }
     }
@@ -57,5 +59,6 @@ public class DailyManager : MonoBehaviour
         GameManager.Instance.SetPause(false);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
+        GameManager.Instance.ResetGame();
     }
 }

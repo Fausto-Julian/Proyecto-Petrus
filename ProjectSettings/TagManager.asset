@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - Plate
+  - SpawnPointPlayer
   layers:
   - Default
   - TransparentFX

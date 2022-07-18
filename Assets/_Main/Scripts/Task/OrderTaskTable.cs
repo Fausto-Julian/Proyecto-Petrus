@@ -67,6 +67,18 @@ public class OrderTaskTable : MonoBehaviour
             }
         }
     }
+
+    public void RemoveAllPlate()
+    {
+        for(var i = 0; i < _plates.Length; i++)
+        {
+            if(_plates[i].Item != null)
+            {
+                Destroy(_plates[i].Item);
+                _plates[i].Item = null; 
+            }
+        }
+    }
 }
 
 class Plate
