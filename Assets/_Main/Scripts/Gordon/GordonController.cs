@@ -61,9 +61,10 @@ public class GordonController : MonoBehaviour
                 if (distance < 0.1f)
                 {
                     _currentTimeShow = Random.Range(minTimerShow, maxTimerShow);
-                    _isShow = false;
+                    FindObjectOfType<GordonEyeTracker>().ResetGordonSight();
                     _isPlayingAudio = false;
                     _audioSource.Stop();
+                    _isShow = false;
                 }
             }
         }
@@ -88,6 +89,7 @@ public class GordonController : MonoBehaviour
                 {
                     OnShow.Invoke();
                     _currentTimeHide = Random.Range(minTimerHide, maxTimerHide);
+                    FindObjectOfType<GordonEyeTracker>().ResetGordonSight();
                     _isShow = true;
 
                     _isPlayingAudio = false;

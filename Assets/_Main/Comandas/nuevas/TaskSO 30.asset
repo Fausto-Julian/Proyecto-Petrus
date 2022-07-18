@@ -17,7 +17,7 @@ MonoBehaviour:
   orderMatters: 0
   ingredients: 0700000001000000100000000d00000007000000
   imageOrder: {fileID: 21300000, guid: 94aabed158719e24e877b810042754b6, type: 3}
-  clientTimer: 50
+  clientTimer: 60
   clientState: 0
   imageClientHappy: {fileID: 21300000, guid: 19d0a893c265de04dbd0961b0462257b, type: 3}
   imageClientNeutral: {fileID: 21300000, guid: cd5c1c3b58ea5c347b32b75b2b2f0c2b, type: 3}

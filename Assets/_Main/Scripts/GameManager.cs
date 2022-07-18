@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private OrderTaskTable orderTaskTable;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ParticleSystem goodParticles;
+    [SerializeField] private ParticleSystem badParticles;
     [SerializeField] private GameObject prefabPlayer;
 
     private float _money;
@@ -148,6 +149,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                badParticles.Play();
                 SubtractMoneyDaily(10);
             }
         }
@@ -189,6 +191,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(objecs[i].gameObject);
         }
+        FindObjectOfType<GordonEyeTracker>().ResetGordonSight();
         orderTaskTable.AddTask();
     }
 }

@@ -7,6 +7,7 @@ public class GarbageController : MonoBehaviour
     [SerializeField] private GarbageFloor garbageFloor;
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip soundClip;
+    [SerializeField] private Collider colliderChildren;
     
     private NavMeshAgent _navMeshAgent;
     
@@ -20,9 +21,18 @@ public class GarbageController : MonoBehaviour
         if (GameManager.Instance.GetProgressLevels().BasurinLevel > 1)
         {
             _navMeshAgent.destination = garbageFloor.ObjectDrops.Count > 0 ? garbageFloor.ObjectDrops[0].transform.position : startPosition.position;
+            _navMeshAgent.speed = GameManager.Instance.GetProgressLevels().BasurinLevel;
+            GetComponentInChildren<Renderer>().enabled = true;
+            colliderChildren.enabled = true;
+            GetComponent<BoxCollider>().enabled = true;
+        }
+        else
+        {
+            colliderChildren.enabled = false;
+            GetComponentInChildren<Renderer>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
         }
 
-        _navMeshAgent.speed = GameManager.Instance.GetProgressLevels().BasurinLevel;
     }
 
     private void OnTriggerStay(Collider other)

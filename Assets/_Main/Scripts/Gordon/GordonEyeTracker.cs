@@ -2,32 +2,27 @@ using UnityEngine;
 
 public class GordonEyeTracker : MonoBehaviour
 {
-    [SerializeField] private Transform player;
     [SerializeField] private Transform eyeBall;
-    [SerializeField] private Transform pupil;
+    private GameObject player;
 
     private Vector3 playerDirection;
-    void Start()
+    void Awake()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //La pupila va a cambiar sus coordenadas al rededor del ojo, apuntando al player
-        //
-        //Vector3 playerDirection = (player.position - eyeBall.position).normalized;
-
-        ////la direccion de la pupila = nuestro 0,0. + la direccion al player, que no salga de la esfera
-        //pupil.position = (new Vector3(12, 12, 12) + eyeBall.position + playerDirection);\
-
-        transform.LookAt(player);
-
+        if(player != null)
+        {
+            transform.LookAt(player.transform.position);
+        }
     }
 
-    private void OnDrawGizmos()
+    public void ResetGordonSight()
     {
-        Debug.DrawLine(eyeBall.position, player.position, Color.yellow);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
+    
 }
