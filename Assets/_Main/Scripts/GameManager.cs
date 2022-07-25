@@ -114,6 +114,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        progressLevelsSo.KitchenBellLevel = 1;
+        progressLevelsSo.MoreClientsLevel = 1;
+        progressLevelsSo.KitchenSpeedLevel = 1;
+        progressLevelsSo.SharpenKnifeLevel = 3;
+        progressLevelsSo.BasurinLevel = 1;
+        progressLevelsSo.FortuneLevel = 1;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("DefeatScene");
     }
